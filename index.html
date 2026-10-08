@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>KBCS — Kevin Broadie, Design &amp; Technology Partner</title>
 <meta name="description" content="Kevin Broadie’s design and technology practice, for organizations with real gaps in design and technology and the agencies that serve them. Fixed-fee audits of websites, print, and systems, WCAG 2.1 AA accessibility, copyediting, staff training, and the refinement that makes good work great.">
 <meta name="theme-color" content="#f3f1ec" media="(prefers-color-scheme: light)">
@@ -11,14 +11,17 @@
 <meta property="og:description" content="Kevin Broadie’s design and technology practice, for organizations with real gaps in design and technology and the agencies that serve them. Fixed-fee audits of websites, print, and systems, WCAG 2.1 AA accessibility, copyediting, staff training, and the refinement that makes good work great.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://kevinbroadie.com/">
+<meta property="og:image" content="https://kevinbroadie.com/images/photos/wind-farm-1024.webp">
 <!-- The GitHub Pages copy points search engines at the real domain -->
 <link rel="canonical" href="https://kevinbroadie.com/">
 <link rel="icon" type="image/png" href="images/logo.png">
+<link rel="apple-touch-icon" href="images/icons/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<script>document.documentElement.classList.add('js');</script>
+<script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('kbcs-theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t);}catch(e){}})();</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -48,8 +51,7 @@
       <img src="images/logo.png" alt="" width="28" height="28"><span>KBCS</span>
     </a>
     <nav class="nav" aria-label="Primary">
-      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
-      <ul class="nav-links" id="nav-links">
+      <ul class="nav-links">
         <li><a href="audit.html">Audit</a></li>
         <li><a href="accessibility.html">Accessibility</a></li>
         <li><a href="services.html">Services</a></li>
@@ -88,24 +90,32 @@
 
       <div class="hero-side">
       <a class="founder-card reveal" href="about.html">
-        <img src="images/kevin.jpg" alt="" width="400" height="400">
+        <img src="images/kevin.jpg" alt="" width="400" height="400" fetchpriority="high">
         <span class="fc-body">
           <span class="fc-name">Kevin Broadie</span>
           <span class="fc-role">Founder &amp; principal consultant</span>
           <span class="fc-link">About Kevin <span aria-hidden="true">→</span></span>
         </span>
       </a>
-      <nav class="index reveal" aria-label="The work, step by step">
-        <p class="index-title">How the work moves</p>
-        <ol>
-          <li><a href="services.html#audit"><span>01</span>Audit</a></li>
-          <li><a href="services.html#refine"><span>02</span>Refine</a></li>
-          <li><a href="services.html#direct"><span>03</span>Direct</a></li>
-          <li><a href="services.html#build"><span>04</span>Build</a></li>
-          <li><a href="services.html#automate"><span>05</span>Automate</a></li>
-        </ol>
-      </nav>
       </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <figure class="photo-band reveal">
+      <img src="images/photos/wind-farm-1024.webp" srcset="images/photos/wind-farm-640.webp 640w, images/photos/wind-farm-1024.webp 1024w" sizes="(min-width: 1240px) 1240px, 100vw" alt="Wind turbines below the mountains in the San Gorgonio Pass, outside Palm Springs" width="1024" height="683" loading="lazy" decoding="async">
+      <figcaption>Based in Palm Springs, California</figcaption>
+    </figure>
+  </div>
+
+  <section class="logos" aria-labelledby="logos-title">
+    <div class="wrap logos-head">
+      <h2 id="logos-title" class="seen-label">Clients include</h2>
+      <button type="button" class="marquee-toggle" aria-pressed="false">Pause</button>
+    </div>
+    <div class="marquee">
+      <ul class="marquee-track"><li><img class="logo-img" src="images/logos/arrive.png" alt="Arrive Palm Springs" width="209" height="96" loading="lazy" decoding="async"></li><li><img class="logo-img" src="images/logos/phillip-k-smith-iii.png" alt="Phillip K. Smith III" width="1256" height="96" loading="lazy" decoding="async"></li><li><img class="logo-img" src="images/logos/cvag.png" alt="Coachella Valley Association of Governments" width="468" height="96" loading="lazy" decoding="async"></li><li><img class="logo-img" src="images/logos/workshop.png" alt="Workshop" width="180" height="96" loading="lazy" decoding="async"></li><li><img class="logo-img" src="images/logos/grounded.png" alt="Grounded" width="249" height="96" loading="lazy" decoding="async"></li><li><img class="logo-img" src="images/logos/sandfish.png" alt="Sandfish" width="244" height="96" loading="lazy" decoding="async"></li><li><img class="logo-img" src="images/logos/mangus-group.png" alt="Mangus Group" width="472" height="96" loading="lazy" decoding="async"></li><li><img class="logo-img" src="images/logos/tailor-shop.png" alt="Tailor Shop" width="154" height="96" loading="lazy" decoding="async"></li><li><img class="logo-img" src="images/logos/virgin-river.png" alt="Virgin River Naturals" width="147" height="96" loading="lazy" decoding="async"></li><li><img class="logo-img" src="images/logos/truss-twine.png" alt="Truss &amp; Twine" width="165" height="96" loading="lazy" decoding="async"></li><li><img class="logo-img" src="images/logos/priority-lighting.png" alt="Priority Lighting" width="242" height="96" loading="lazy" decoding="async"></li><li><img class="logo-img" src="images/logos/the-art-collective.png" alt="The Art Collective" width="302" height="96" loading="lazy" decoding="async"></li><li><img class="logo-img" src="images/logos/ernest-coffee.png" alt="Ernest Coffee" width="104" height="96" loading="lazy" decoding="async"></li><li><img class="logo-img" src="images/logos/elizabeth-prince.png" alt="Elizabeth &amp; Prince" width="900" height="96" loading="lazy" decoding="async"></li><li><img class="logo-img" src="images/logos/the-venue.png" alt="The Venue" width="156" height="96" loading="lazy" decoding="async"></li><li><img class="logo-img" src="images/logos/wilma-frieda.png" alt="Wilma &amp; Frieda" width="130" height="96" loading="lazy" decoding="async"></li><li><img class="logo-img" src="images/logos/ice-cream-shoppe.png" alt="Ice Cream &amp; Shoppe" width="231" height="96" loading="lazy" decoding="async"></li></ul>
+      <ul class="marquee-track" aria-hidden="true"><li><img class="logo-img" src="images/logos/arrive.png" alt="" width="209" height="96" loading="lazy" decoding="async"></li><li><img class="logo-img" src="images/logos/phillip-k-smith-iii.png" alt="" width="1256" height="96" loading="lazy" decoding="async"></li><li><img class="logo-img" src="images/logos/cvag.png" alt="" width="468" height="96" loading="lazy" decoding="async"></li><li><img class="logo-img" src="images/logos/workshop.png" alt="" width="180" height="96" loading="lazy" decoding="async"></li><li><img class="logo-img" src="images/logos/grounded.png" alt="" width="249" height="96" loading="lazy" decoding="async"></li><li><img class="logo-img" src="images/logos/sandfish.png" alt="" width="244" height="96" loading="lazy" decoding="async"></li><li><img class="logo-img" src="images/logos/mangus-group.png" alt="" width="472" height="96" loading="lazy" decoding="async"></li><li><img class="logo-img" src="images/logos/tailor-shop.png" alt="" width="154" height="96" loading="lazy" decoding="async"></li><li><img class="logo-img" src="images/logos/virgin-river.png" alt="" width="147" height="96" loading="lazy" decoding="async"></li><li><img class="logo-img" src="images/logos/truss-twine.png" alt="" width="165" height="96" loading="lazy" decoding="async"></li><li><img class="logo-img" src="images/logos/priority-lighting.png" alt="" width="242" height="96" loading="lazy" decoding="async"></li><li><img class="logo-img" src="images/logos/the-art-collective.png" alt="" width="302" height="96" loading="lazy" decoding="async"></li><li><img class="logo-img" src="images/logos/ernest-coffee.png" alt="" width="104" height="96" loading="lazy" decoding="async"></li><li><img class="logo-img" src="images/logos/elizabeth-prince.png" alt="" width="900" height="96" loading="lazy" decoding="async"></li><li><img class="logo-img" src="images/logos/the-venue.png" alt="" width="156" height="96" loading="lazy" decoding="async"></li><li><img class="logo-img" src="images/logos/wilma-frieda.png" alt="" width="130" height="96" loading="lazy" decoding="async"></li><li><img class="logo-img" src="images/logos/ice-cream-shoppe.png" alt="" width="231" height="96" loading="lazy" decoding="async"></li></ul>
     </div>
   </section>
 
@@ -150,14 +160,28 @@
     </div>
   </section>
 
-  <section class="seen-in" aria-labelledby="seen-in-title">
-    <div class="wrap seen-grid">
-      <h2 id="seen-in-title" class="seen-label reveal">Where the work has run</h2>
-      <ul class="seen-list reveal">
-        <li>Palm Springs Life</li>
-        <li>Locale magazine</li>
-        <li>Palm Springs International Airport</li>
-        <li>Lamar billboards</li>
+  <section class="work-preview" aria-labelledby="work-preview-title">
+    <div class="wrap">
+      <div class="sec-head-row">
+        <div class="sec-head">
+          <p class="eyebrow reveal">Selected work</p>
+          <h2 id="work-preview-title" class="reveal">Brands, sites, and systems</h2>
+        </div>
+        <a href="work.html" class="btn btn-ghost reveal">See all work <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+      <ul class="project-grid">
+        <li class="project reveal"><a class="project-card" href="work.html#grounded">
+          <span class="project-media"><img class="project-cover" src="images/work/grounded-1-1200.webp" srcset="images/work/grounded-1-640.webp 640w, images/work/grounded-1-1200.webp 1078w" sizes="(min-width: 960px) 33vw, (min-width: 640px) 50vw, 100vw" alt="Grounded billboard on a city street" width="1078" height="838" loading="lazy" decoding="async"></span>
+          <span class="project-body"><span class="project-kicker">Spa and wellness</span><span class="project-title">Grounded</span><span class="project-text">Brand identity, packaging, an e-commerce site, and a custom booking tool.</span></span>
+        </a></li>
+        <li class="project reveal"><a class="project-card" href="work.html#virgin-river">
+          <span class="project-media"><img class="project-cover" src="images/work/virgin-river-1-1200.webp" srcset="images/work/virgin-river-1-640.webp 640w, images/work/virgin-river-1-1200.webp 1200w" sizes="(min-width: 960px) 33vw, (min-width: 640px) 50vw, 100vw" alt="Virgin River Naturals candle tins in a range of scents" width="1200" height="582" loading="lazy" decoding="async"></span>
+          <span class="project-body"><span class="project-kicker">Natural products</span><span class="project-title">Virgin River Naturals</span><span class="project-text">A rebrand of an existing product line: packaging, stationery, and a retail website.</span></span>
+        </a></li>
+        <li class="project reveal"><a class="project-card" href="work.html#pks3">
+          <span class="project-media"><img class="project-cover" src="images/work/pks3-1-640.webp" alt="Phillip K. Smith III exhibition print pieces with the PKS3 mark" width="486" height="565" loading="lazy" decoding="async"></span>
+          <span class="project-body"><span class="project-kicker">Arts and culture</span><span class="project-title">Phillip K. Smith III</span><span class="project-text">An immersive online gallery that carries the light artist’s installations onto the web.</span></span>
+        </a></li>
       </ul>
     </div>
   </section>
@@ -209,6 +233,18 @@
     </div>
   </section>
 
+  <section class="seen-in" aria-labelledby="seen-in-title">
+    <div class="wrap seen-grid">
+      <h2 id="seen-in-title" class="seen-label reveal">Where the work has run</h2>
+      <ul class="seen-list reveal">
+        <li class="seen-text">Palm Springs Life</li>
+        <li><img class="logo-img" src="images/logos/locale.png" alt="Locale magazine" width="432" height="96" loading="lazy" decoding="async"></li>
+        <li><img class="logo-img" src="images/logos/palm-springs-airport.png" alt="Palm Springs International Airport" width="472" height="96" loading="lazy" decoding="async"></li>
+        <li><img class="logo-img" src="images/logos/lamar.png" alt="Lamar" width="612" height="96" loading="lazy" decoding="async"></li>
+      </ul>
+    </div>
+  </section>
+
   <section class="cta-band" aria-labelledby="cta-title">
     <div class="wrap cta-grid">
       <div>
@@ -241,9 +277,47 @@
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
-    <span>© <span id="yr">2026</span> KBCS · Design &amp; technology partner</span>
+    <div class="foot-end">
+      <div class="theme-control" role="group" aria-label="Color theme">
+        <button type="button" data-theme-choice="auto" aria-pressed="true">Auto</button>
+        <button type="button" data-theme-choice="light" aria-pressed="false">Light</button>
+        <button type="button" data-theme-choice="dark" aria-pressed="false">Dark</button>
+      </div>
+      <span>© <span id="yr">2026</span> KBCS · Design &amp; technology partner</span>
+    </div>
   </div>
 </footer>
+
+<nav class="tabbar" aria-label="Sections">
+  <a href="index.html" aria-current="page"><svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span>Home</span></a>
+  <a href="services.html"><svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></svg><span>Services</span></a>
+  <a href="audit.html"><svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.6-4.6"/><path d="m7.6 10.6 2 2 3.8-3.8"/></svg><span>Audit</span></a>
+  <a href="work.html"><svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2.2"/><circle cx="9" cy="10" r="1.8"/><path d="m21 15.5-4.8-4.8L7 20"/></svg><span>Work</span></a>
+  <button type="button" class="tab-more" aria-haspopup="dialog" aria-controls="more-sheet"><svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/></svg><span>More</span></button>
+</nav>
+
+<dialog class="sheet" id="more-sheet" aria-labelledby="more-title">
+  <div class="sheet-inner">
+    <div class="sheet-handle" aria-hidden="true"></div>
+    <div class="sheet-head">
+      <h2 id="more-title">More</h2>
+      <button type="button" class="sheet-close" data-close aria-label="Close">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <ul class="sheet-links">
+      <li><a href="accessibility.html"><span>Accessibility</span><small>WCAG 2.1 AA audits, deadlines, contrast checker</small></a></li>
+      <li><a href="about.html"><span>About</span><small>Kevin Broadie and how we work</small></a></li>
+      <li><a href="contact.html"><span>Contact</span><small>Start a project or book an audit</small></a></li>
+    </ul>
+    <p class="sheet-label">Theme</p>
+    <div class="theme-control" role="group" aria-label="Color theme">
+        <button type="button" data-theme-choice="auto" aria-pressed="true">Auto</button>
+        <button type="button" data-theme-choice="light" aria-pressed="false">Light</button>
+        <button type="button" data-theme-choice="dark" aria-pressed="false">Dark</button>
+      </div>
+  </div>
+</dialog>
 
 <script src="script.js"></script>
 </body>
