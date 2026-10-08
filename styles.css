@@ -275,7 +275,7 @@ form { display: grid; gap: 1.8rem; }
 .row { display: grid; gap: 1.8rem; }
 .field { display: grid; gap: 0.35rem; }
 .field label { color: var(--muted); }
-.field .opt { text-transform: none; letter-spacing: 0; opacity: 0.75; }
+.field .opt { text-transform: none; letter-spacing: 0; }
 
 .field input, .field textarea, .field select {
   width: 100%;
@@ -624,7 +624,7 @@ main > section:first-child:not(.hero) { padding-top: clamp(3rem, 8vw, 6.5rem); }
 .cd-pair { display: grid; gap: 1rem; }
 .cd-sample { background: #f3f1ec; border: 1px solid #d9d6ce; border-radius: 4px; padding: 1.5rem; }
 .cd-text { font-size: 1.2rem; line-height: 1.4; }
-.cd-fail .cd-text { color: #a6a8b0; }
+.cd-fail .cd-text { display: block; width: 100%; max-width: 420px; height: auto; }
 .cd-pass .cd-text { color: #5d5e66; }
 .cd-meta { margin-top: 1rem; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: #3a3b42; display: flex; align-items: center; gap: 0.6rem; }
 .cd-badge { padding: 0.2rem 0.55rem; border-radius: 999px; color: #ffffff; }
