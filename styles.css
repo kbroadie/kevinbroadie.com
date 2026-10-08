@@ -152,6 +152,11 @@ em { font-style: italic; }
   max-width: 11ch;
 }
 
+.display-after {
+  display: block; margin-top: max(0.3em, 1.1rem);
+  font-size: max(0.4em, 1.75rem); font-style: italic; line-height: 1.1; letter-spacing: -0.01em;
+  color: var(--muted);
+}
 .great { position: relative; display: inline-block; padding-right: 0.04em; }
 .scribble {
   position: absolute; left: -0.02em; right: -0.04em; bottom: -0.1em;
@@ -358,6 +363,13 @@ form { display: grid; gap: 1.8rem; }
 .offer-terms dd { font-family: var(--serif); font-size: clamp(1.9rem, 4vw, 2.6rem); line-height: 1.1; margin-top: 0.3rem; }
 .offer-card h3 { font-size: 1.7rem; }
 .fineprint { display: grid; gap: 0.4rem; font-size: 0.92rem; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 1.4rem; width: 100%; }
+
+.ledger { display: grid; gap: 1.5rem; margin-top: 2.6rem; max-width: 34rem; }
+.ledger > div { padding-top: 1rem; border-top: 1px solid var(--rule-strong); }
+.ledger .ledger-price { border-top: 2px solid transparent; border-image: linear-gradient(90deg, var(--cyan-bright), var(--magenta-bright)) 1; }
+.ledger-label { font-family: var(--serif); font-size: 1.6rem; line-height: 1.1; margin-bottom: 0.5rem; }
+.ledger-cost .ledger-label { color: var(--muted); }
+.ledger p:last-child { color: var(--ink-2); }
 
 /* ---------- Accessibility ---------- */
 .access { padding: var(--sec) 0; }
