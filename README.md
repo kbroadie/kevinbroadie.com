@@ -19,19 +19,25 @@ python3 -m http.server 8000
 
 Then open http://localhost:8000.
 
-## Publishing (GitHub Pages)
+## GitHub Pages
 
-One-time setup: in the repo go to **Settings → Pages**, set **Source** to *Deploy from a branch*, then pick `main` and `/ (root)`. Every push to `main` then publishes to https://kbroadie.github.io/kevinbroadie.com/ within a minute or two.
+Every push to `main` publishes the site to https://kbroadie.github.io/kevinbroadie.com/, a working copy for reviewing changes. One-time setup: **Settings → Pages**, set **Source** to *Deploy from a branch*, then pick `main` and `/ (root)`.
 
-### Moving kevinbroadie.com onto GitHub Pages
+The page's canonical link points at https://kevinbroadie.com/, so search engines treat the GitHub copy as a duplicate rather than a competing site.
 
-When the preview looks right:
+## Updating the live site
 
-1. In **Settings → Pages → Custom domain**, enter `kevinbroadie.com` and save. GitHub commits a `CNAME` file to `main`.
-2. At your domain registrar, point the domain at GitHub Pages:
-   - `A` records for `@`: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-   - `CNAME` record for `www`: `kbroadie.github.io`
-3. Once the DNS check passes, tick **Enforce HTTPS**.
+kevinbroadie.com is served by a separate web host. To publish, upload these to the site's root folder there:
+
+```
+index.html
+styles.css
+script.js
+404.html
+images/logo.png
+```
+
+The repo-only files (`README.md`, `.nojekyll`) aren't needed on the host.
 
 ## Contact form
 
