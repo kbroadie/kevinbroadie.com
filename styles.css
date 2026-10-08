@@ -469,6 +469,15 @@ main > section:first-child:not(.hero) { padding-top: clamp(3rem, 8vw, 6.5rem); }
 .overview { padding: var(--sec) 0; }
 .konsist { padding: var(--sec) 0; border-top: 1px solid var(--rule); }
 .konsist .overview-list { margin-top: 2.5rem; }
+.clients { margin-top: 4rem; }
+.clients h3 { font-size: clamp(1.9rem, 4vw, 2.6rem); }
+.clients > p { color: var(--muted); max-width: 60ch; margin-top: 0.8rem; }
+.client-groups { display: grid; gap: 2rem 3rem; margin-top: 2rem; }
+.client-group { border-top: 1px solid var(--ink); padding-top: 1rem; }
+.client-group ul { display: grid; gap: 0.35rem; margin-top: 0.8rem; }
+.client-group li { font-family: var(--serif); font-size: 1.3rem; line-height: 1.25; }
+@media (min-width: 640px) { .client-groups { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 960px) { .client-groups { grid-template-columns: repeat(3, 1fr); } }
 .overview .sec-head :is(h1, h2) { margin-bottom: 2.5rem; }
 .overview-list { border-top: 1px solid var(--ink); }
 .overview-list a {
