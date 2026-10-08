@@ -41,4 +41,27 @@ The repo-only files (`README.md`, `.nojekyll`) aren't needed on the host.
 
 ## Contact form
 
-The form doesn't post anywhere. It validates the fields and opens the visitor's email app with a pre-filled message. The recipient is `CONTACT_EMAIL` at the top of `script.js`.
+The form validates the fields, then either:
+
+- opens the visitor's email app with a pre-filled message to `CONTACT_EMAIL` (the default), or
+- if `FORM_ENDPOINT` is set, sends the message directly to a form service such as [Formspree](https://formspree.io), and falls back to the email app if that fails.
+
+Both settings are at the top of `script.js`. The budget and timeline options are in `index.html`; adjust the budget ranges to match your pricing.
+
+## Before going live: placeholders
+
+Anything not yet known is wrapped in `<span class="todo">[...]</span>` and shows up highlighted with a dashed pink outline. To list them all:
+
+```sh
+grep -n 'class="todo"' index.html
+```
+
+They cover:
+
+- **Prices:** audit fee and timeframe, partner retainer and project minimums (these appear in the audit card, the engagement cards, and the contact section).
+- **Audit terms:** QA scope and how long the fee credit lasts.
+- **About:** bio, experience, credentials, city, LinkedIn link. To add a photo, save it as `images/kevin.jpg` and swap the monogram in the about section for the `<img>` noted in the comment there.
+- **Selected work:** three anonymized case notes and a partner quote. Use real engagements only, with permission, or delete the card.
+- **Contact:** reply time.
+
+Also check that the audit description (hand testing with keyboard and screen readers) and the agency promises match how you actually work. The accessibility deadlines are current as of October 2026.
