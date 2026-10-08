@@ -406,19 +406,17 @@ form { display: grid; gap: 1.8rem; }
 
 /* ---------- About ---------- */
 .about { padding: var(--sec) 0; }
-.about-grid { display: grid; gap: 2.5rem; align-items: center; }
-.portrait {
-  aspect-ratio: 4 / 5; width: 100%; max-width: 22rem; border-radius: 4px; overflow: hidden;
-  display: grid; place-items: center;
-  background: linear-gradient(140deg, var(--cyan-bright), #6a4bc4 55%, var(--magenta-bright));
-}
-.portrait span { font-family: var(--serif); font-size: 6rem; color: #fff; opacity: 0.9; }
-.portrait img { width: 100%; height: 100%; object-fit: cover; }
+.about-grid { display: grid; gap: 2.5rem; align-items: start; }
+.portrait { width: 100%; max-width: 22rem; border-radius: 4px; overflow: hidden; background: var(--paper-2); }
+.portrait img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; }
 .about h2 { margin-top: 1.2rem; }
 .role { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-top: 0.8rem; }
 .bio { font-size: 1.15rem; color: var(--ink-2); max-width: 52ch; margin-top: 1.6rem; }
 .facts { margin-top: 2rem; border-top: 1px solid var(--rule); max-width: 36rem; }
-.facts div { display: grid; grid-template-columns: 8rem 1fr; gap: 1rem; padding: 0.8rem 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
+.facts div { display: grid; gap: 0.3rem; padding: 0.8rem 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
+.facts li + li { margin-top: 0.3rem; }
+.pull { margin-top: 1.8rem; padding-left: 1.2rem; border-left: 2px solid var(--magenta); max-width: 48ch; }
+.pull p { font-family: var(--serif); font-style: italic; font-size: 1.35rem; line-height: 1.3; color: var(--ink); }
 .links { margin-top: 1.6rem; }
 .text-link { font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid var(--cyan); padding-bottom: 0.15rem; }
 .text-link:hover { color: var(--cyan); }
@@ -433,6 +431,7 @@ form { display: grid; gap: 1.8rem; }
 
 @media (min-width: 640px) {
   .notes-grid { grid-template-columns: repeat(2, 1fr); }
+  .facts div { grid-template-columns: 7.5rem 1fr; gap: 1rem; }
   .about-grid { grid-template-columns: minmax(12rem, 0.7fr) 1.3fr; gap: 4rem; }
 }
 

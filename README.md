@@ -8,6 +8,7 @@ styles.css        all styles (light and dark themes via prefers-color-scheme)
 script.js         scroll reveals, footer year, contact form
 404.html          not-found page
 images/logo.png   KBCS mark (also the favicon)
+images/kevin.jpg  founder photo
 .nojekyll         tells GitHub Pages to serve the files as-is
 ```
 
@@ -35,6 +36,7 @@ styles.css
 script.js
 404.html
 images/logo.png
+images/kevin.jpg
 ```
 
 The repo-only files (`README.md`, `.nojekyll`) aren't needed on the host.
@@ -60,8 +62,7 @@ They cover:
 
 - **Prices:** audit fee and timeframe, partner retainer and project minimums (these appear in the audit card, the engagement cards, and the contact section).
 - **Audit terms:** QA scope and how long the fee credit lasts.
-- **About:** bio, experience, credentials, city. To add a photo, save it as `images/kevin.jpg` and swap the monogram in the about section for the `<img>` noted in the comment there.
-- **Selected work:** three anonymized case notes and a partner quote. Use real engagements only, with permission, or delete the card.
+- **Partner quote** in the selected-work section. Use a real quote, with permission, or delete the `<figure class="quote">`.
 - **Contact:** reply time.
 
-Also check that the audit description (hand testing with keyboard and screen readers) and the agency promises match how you actually work. The accessibility deadlines are current as of October 2026.
+The founder section and case notes come from Kevin's LinkedIn profile; keep them in step with it. Also check that the audit description and the agency promises match how you actually work. The accessibility deadlines are current as of October 2026.
