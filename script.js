@@ -1,5 +1,5 @@
 // Where contact form messages go.
-// TODO: set CONTACT_EMAIL to the real inbox.
+// Placeholder on purpose: the real address is set only on the live web host.
 const CONTACT_EMAIL = 'hello@example.com';
 // Optional: a form service endpoint (e.g. 'https://formspree.io/f/abcdwxyz').
 // When set, the form sends directly instead of opening the visitor's email app.
