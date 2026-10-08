@@ -3,13 +3,21 @@
 Source for [kevinbroadie.com](https://kevinbroadie.com), the KBCS design & technology partner site. Plain HTML, CSS and JavaScript with no build step, published with GitHub Pages.
 
 ```
-index.html        page markup
-styles.css        all styles (light and dark themes via prefers-color-scheme)
-script.js         scroll reveals, footer year, contact form
-404.html          not-found page
-images/logo.png   KBCS mark (also the favicon)
-images/kevin.jpg  founder photo
-.nojekyll         tells GitHub Pages to serve the files as-is
+index.html          home: hero, overview of what we do, engagements
+audit.html          the audit: what we audit, fee and terms
+accessibility.html  WCAG 2.1 AA, deadlines, no overlays
+services.html       the five steps, training, presentations, advising
+work.html           selected work
+about.html          Kevin Broadie, how we work
+contact.html        contact form
+404.html            not-found page
+styles.css          all styles (light and dark themes via prefers-color-scheme)
+script.js           phone menu, scroll reveals, footer year, contact form
+images/logo.png     KBCS mark (also the favicon)
+images/kevin.jpg    founder photo
+.nojekyll           tells GitHub Pages to serve the files as-is
+
+Every page carries its own copy of the header (navigation) and footer. When you change one, change them all.
 ```
 
 ## Preview locally
@@ -32,9 +40,15 @@ kevinbroadie.com is served by a separate web host. To publish, upload these to t
 
 ```
 index.html
+audit.html
+accessibility.html
+services.html
+work.html
+about.html
+contact.html
+404.html
 styles.css
 script.js
-404.html
 images/logo.png
 images/kevin.jpg
 ```
@@ -48,7 +62,7 @@ The form validates the fields, then either:
 - opens the visitor's email app with a pre-filled message to `CONTACT_EMAIL` (the default), or
 - if `FORM_ENDPOINT` is set, sends the message directly to a form service such as [Formspree](https://formspree.io), and falls back to the email app if that fails.
 
-Both settings are at the top of `script.js`. The budget and timeline options are in `index.html`; adjust the budget ranges to match your pricing.
+Both settings are at the top of `script.js`. The budget and timeline options are in `contact.html`; adjust the budget ranges to match your pricing. Links such as `contact.html?interest=An+audit` pre-select the form's "Interested in" and "You are" options.
 
 ## Pricing and terms
 
@@ -62,7 +76,7 @@ The published prices are starting points set from market benchmarks for comparab
 | Projects | from $10,000 | Discovery is typically 5–10% of a project; matches the "Under $10k" budget option in the form. |
 | Reply time | two business days | |
 
-Prices appear in the audit card, the engagement cards and the contact section; search `index.html` for `$` to find them all.
+Prices appear on the home, audit and contact pages; search the HTML files for `$` to find them all.
 
 The founder section comes from Kevin's LinkedIn profile; keep it in step with it. Also check that the audit description and the agency promises match how you actually work. The accessibility deadlines are current as of October 2026.
 

@@ -24,12 +24,30 @@ if ('IntersectionObserver' in window) {
   reveals.forEach((el) => el.classList.add('in'));
 }
 
-// Buttons like "Book an audit" pre-select the matching form options
-document.querySelectorAll('[data-interest], [data-role]').forEach((link) => {
-  link.addEventListener('click', () => {
-    if (link.dataset.interest) document.getElementById('interest').value = link.dataset.interest;
-    if (link.dataset.role) document.getElementById('role').value = link.dataset.role;
-  });
+// Phone menu
+const menuButton = document.querySelector('.menu-btn');
+const header = document.querySelector('.site-header');
+const setMenu = (open) => {
+  header.classList.toggle('menu-open', open);
+  menuButton.setAttribute('aria-expanded', String(open));
+  menuButton.textContent = open ? 'Close' : 'Menu';
+};
+menuButton.addEventListener('click', () => setMenu(!header.classList.contains('menu-open')));
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && header.classList.contains('menu-open')) {
+    setMenu(false);
+    menuButton.focus();
+  }
+});
+
+// Links like contact.html?interest=An+audit pre-select the matching form options
+const params = new URLSearchParams(window.location.search);
+['interest', 'role'].forEach((key) => {
+  const select = document.getElementById(key);
+  const value = params.get(key);
+  if (select && value && [...select.options].some((option) => option.value === value)) {
+    select.value = value;
+  }
 });
 
 // Contact form
@@ -37,7 +55,7 @@ const form = document.getElementById('form');
 const success = document.getElementById('success');
 const errorBox = document.getElementById('form-error');
 
-if (FORM_ENDPOINT) {
+if (form && FORM_ENDPOINT) {
   document.getElementById('form-note').textContent = 'Sent straight to us, in confidence.';
 }
 
@@ -74,7 +92,7 @@ const openEmailDraft = ({ subject, body }) => {
     + `&body=${encodeURIComponent(body)}`;
 };
 
-form.addEventListener('submit', async (e) => {
+form?.addEventListener('submit', async (e) => {
   e.preventDefault();
   errorBox.hidden = true;
   if (!form.checkValidity()) {
