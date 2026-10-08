@@ -11,7 +11,8 @@ Static site for kevinbroadie.com (KBCS), no build step: `index.html`, `audit.htm
 
 ## Content
 
-- Case notes (selected work): the regional transportation grant, the country-club community's visual system, and the retail operations overhaul that integrated e-commerce. Don't use the museum IT systems upgrade as an example.
+- Case notes (selected work): CVAG's ACCESS Indian Canyon Drive grant ($50M from the California Transportation Commission's LTCAP, approved unanimously, one of two projects with the state's highest priority ranking; Kevin co-facilitated the grant writing as CVAG's in-house designer; project info at cvag.org/access), Arroyos at Desert Princess (visual system, done at Konsist), and the retail operations overhaul that integrated e-commerce (name withheld until Kevin says it can be shared). Don't use the museum IT systems upgrade as an example.
+- Confidentiality is offered when asked, not the default: name clients and organizations wherever permitted; anonymize only work under NDA or where the client asks.
 - Kevin is a strong copyeditor (newsroom background, AP Stylebook); copyediting is part of the offer.
 - Services go well beyond websites: audits of print and pre-production and of systems and service (taking the roles of customer and employee to find pain points for ease, speed, and clarity), staff training, writing and designing public presentations, and acting as a sounding board.
 - Never invent results, quotes, or testimonials. Ask Kevin for specifics.

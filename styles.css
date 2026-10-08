@@ -417,6 +417,7 @@ form { display: grid; gap: 1.8rem; }
 .note-card h3 { font-size: 1.75rem; line-height: 1.1; }
 .note-card dl { display: grid; gap: 0.8rem; }
 .note-card dd { color: var(--ink-2); margin-top: 0.15rem; }
+.note-link { margin-top: 0.4rem; }
 
 .quote { margin-top: 4rem; max-width: 46rem; }
 .quote blockquote p { font-family: var(--serif); font-size: clamp(1.7rem, 3.6vw, 2.6rem); line-height: 1.15; }
