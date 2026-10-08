@@ -64,6 +64,6 @@ The published prices are starting points set from market benchmarks for comparab
 
 Prices appear in the audit card, the engagement cards and the contact section; search `index.html` for `$` to find them all.
 
-The founder section and case notes come from Kevin's LinkedIn profile; keep them in step with it. Also check that the audit description and the agency promises match how you actually work. The accessibility deadlines are current as of October 2026.
+The founder section comes from Kevin's LinkedIn profile; keep it in step with it. Also check that the audit description and the agency promises match how you actually work. The accessibility deadlines are current as of October 2026.
 
 A partner quote block is commented out in the selected-work section. Add a real quote, with permission, when you have one.

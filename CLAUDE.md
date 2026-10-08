@@ -2,6 +2,12 @@
 
 Static site for kevinbroadie.com (KBCS): `index.html`, `styles.css`, `script.js`, no build step. See README.md for previewing, GitHub Pages, and the files uploaded to the live web host.
 
+## Content
+
+- Case notes (selected work): the regional transportation grant, the country-club community's visual system, and the retail operations overhaul that integrated e-commerce. Don't use the museum IT systems upgrade as an example.
+- Kevin is a strong copyeditor (newsroom background, AP Stylebook); copyediting is part of the offer.
+- Never invent results, quotes, or testimonials. Ask Kevin for specifics.
+
 ## Attribution
 
 Do not add AI attribution anywhere in this repository or on GitHub:

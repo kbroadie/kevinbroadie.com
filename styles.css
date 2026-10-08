@@ -333,6 +333,7 @@ form { display: grid; gap: 1.8rem; }
 .btn-ghost:hover { background: var(--ink); color: var(--paper); }
 
 .hero .tags { margin-top: 1.8rem; }
+.nowrap { white-space: nowrap; }
 
 .checklist { display: grid; gap: 0.85rem; }
 .checklist li { position: relative; padding-left: 1.75rem; color: var(--ink-2); }
