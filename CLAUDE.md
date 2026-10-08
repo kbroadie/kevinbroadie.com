@@ -1,6 +1,6 @@
 # Project notes
 
-Static site for kevinbroadie.com (KBCS): `index.html`, `styles.css`, `script.js`, no build step. See README.md for previewing, GitHub Pages, and the files uploaded to the live web host.
+Static site for kevinbroadie.com (KBCS), no build step: `index.html`, `audit.html`, `accessibility.html`, `services.html`, `work.html`, `about.html`, `contact.html`, plus `styles.css` and `script.js`. Each page has its own copy of the header and footer; keep them identical across pages (and update the README upload list when adding a page). See README.md for previewing, GitHub Pages, and the files uploaded to the live web host.
 
 ## Content
 

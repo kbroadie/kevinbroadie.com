@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accessibility — KBCS</title>
+<meta name="description" content="WCAG 2.1 AA accessibility audits and fixes, tested by hand. No overlays. ADA Title II and European Accessibility Act deadlines explained.">
+<meta name="theme-color" content="#f3f1ec" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e0e12" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Accessibility — KBCS">
+<meta property="og:description" content="WCAG 2.1 AA accessibility audits and fixes, tested by hand. No overlays. ADA Title II and European Accessibility Act deadlines explained.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kevinbroadie.com/accessibility.html">
+<!-- The GitHub Pages copy points search engines at the real domain -->
+<link rel="canonical" href="https://kevinbroadie.com/accessibility.html">
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a href="index.html" class="brand" aria-label="KBCS home">
+      <img src="images/logo.png" alt="" width="28" height="28"><span>KBCS</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="audit.html">Audit</a></li>
+        <li><a href="accessibility.html" aria-current="page">Accessibility</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <a href="contact.html" class="btn btn-sm">Start a project</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="access" id="accessibility" aria-labelledby="access-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow reveal">Accessibility</p>
+        <h1 id="access-title" class="page-title reveal">WCAG 2.1 AA audits and fixes. <em>No overlays.</em></h1>
+        <p class="sec-lead reveal">Accessibility is now a legal requirement for many of the teams we work with, not a nice-to-have. We test by hand and fix the code itself.</p>
+      </div>
+      <ul class="access-grid">
+        <li class="reveal">
+          <p class="step-kicker">Public sector</p>
+          <h3>ADA Title II</h3>
+          <p>State and local governments must meet WCAG 2.1 AA for their websites and apps by April 26, 2027 if they serve 50,000 people or more, and by April 26, 2028 if they are smaller.</p>
+        </li>
+        <li class="reveal">
+          <p class="step-kicker">Selling into Europe</p>
+          <h3>European Accessibility Act</h3>
+          <p>In force since June 28, 2025 for most businesses that sell online to customers in the EU, wherever the business is based. Only micro-enterprises are exempt.</p>
+        </li>
+        <li class="reveal">
+          <p class="step-kicker">Why no overlays</p>
+          <h3>Widgets don’t fix code</h3>
+          <p>Automated overlay widgets can’t make a site conform. In 2025 the FTC fined one overlay maker $1 million for claiming otherwise. Real fixes happen in the design and the code.</p>
+        </li>
+      </ul>
+      <p class="access-cta reveal"><a href="contact.html?interest=An+audit" class="btn">Book an accessibility audit <span class="arrow" aria-hidden="true">→</span></a></p>
+      <p class="asof reveal">Deadlines as of October 2026. This is not legal advice.</p>
+    </div>
+  </section>
+
+  <section class="cta-band" aria-labelledby="cta-title">
+    <div class="wrap cta-grid">
+      <div>
+        <p class="eyebrow reveal">Start</p>
+        <h2 id="cta-title" class="reveal">Bring us in, <em>quietly</em>.</h2>
+      </div>
+      <div class="cta-actions reveal">
+        <p>We take on a small number of engagements, most of which come through referrals. We reply within two business days.</p>
+        <div class="cta-buttons">
+          <a href="contact.html" class="btn">Start a project <span class="arrow" aria-hidden="true">→</span></a>
+          <a href="contact.html?interest=An+audit" class="btn btn-ghost">Book an audit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot">
+    <a href="index.html" class="brand">
+      <img src="images/logo.png" alt="" width="22" height="22"><span>KBCS</span>
+    </a>
+    <nav class="foot-nav" aria-label="Site">
+      <a href="index.html">Home</a>
+      <a href="audit.html">Audit</a>
+      <a href="accessibility.html">Accessibility</a>
+      <a href="services.html">Services</a>
+      <a href="work.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <span>© <span id="yr">2026</span> KBCS · Design &amp; technology partner</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
