@@ -60,7 +60,7 @@ They cover:
 
 - **Prices:** audit fee and timeframe, partner retainer and project minimums (these appear in the audit card, the engagement cards, and the contact section).
 - **Audit terms:** QA scope and how long the fee credit lasts.
-- **About:** bio, experience, credentials, city, LinkedIn link. To add a photo, save it as `images/kevin.jpg` and swap the monogram in the about section for the `<img>` noted in the comment there.
+- **About:** bio, experience, credentials, city. To add a photo, save it as `images/kevin.jpg` and swap the monogram in the about section for the `<img>` noted in the comment there.
 - **Selected work:** three anonymized case notes and a partner quote. Use real engagements only, with permission, or delete the card.
 - **Contact:** reply time.
 

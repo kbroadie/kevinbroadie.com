@@ -420,6 +420,8 @@ form { display: grid; gap: 1.8rem; }
 .facts { margin-top: 2rem; border-top: 1px solid var(--rule); max-width: 36rem; }
 .facts div { display: grid; grid-template-columns: 8rem 1fr; gap: 1rem; padding: 0.8rem 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
 .links { margin-top: 1.6rem; }
+.text-link { font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid var(--cyan); padding-bottom: 0.15rem; }
+.text-link:hover { color: var(--cyan); }
 
 /* ---------- Contact additions ---------- */
 .promise { display: grid; gap: 0.5rem; margin-top: 2rem; font-size: 0.95rem; color: var(--ink-2); }
