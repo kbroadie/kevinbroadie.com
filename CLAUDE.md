@@ -2,6 +2,13 @@
 
 Static site for kevinbroadie.com (KBCS), no build step: `index.html`, `audit.html`, `accessibility.html`, `services.html`, `work.html`, `about.html`, `contact.html`, plus `styles.css` and `script.js`. Each page has its own copy of the header and footer; keep them identical across pages (and update the README upload list when adding a page). See README.md for previewing, GitHub Pages, and the files uploaded to the live web host.
 
+## Positioning
+
+- KBCS is a principal-led practice: Kevin leads every engagement and brings in the best person for each part of the job, whether that's him or a specialist he trusts. Clients keep one point of contact.
+- Voice: "I" for Kevin's personal commitments (taking on engagements, reply time, leading audits, the About and contact pages); "we" for the work itself, which may involve specialists. Never imply a standing staff.
+- Run as a lifestyle business for now; KBCS stays the brand, with Kevin named prominently.
+- Target clients: organizations with large budgets and large gaps in Kevin's areas (no in-house design or technology team), first; agencies hiring a white-label partner, second.
+
 ## Content
 
 - Case notes (selected work): the regional transportation grant, the country-club community's visual system, and the retail operations overhaul that integrated e-commerce. Don't use the museum IT systems upgrade as an example.
