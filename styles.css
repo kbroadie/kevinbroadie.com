@@ -328,16 +328,6 @@ form { display: grid; gap: 1.8rem; }
   .contact-intro { position: sticky; top: 7rem; }
 }
 
-/* ---------- Placeholders (replace before going live) ---------- */
-.todo {
-  background: color-mix(in srgb, var(--magenta-bright) 14%, transparent);
-  outline: 1px dashed var(--magenta);
-  outline-offset: 1px;
-  border-radius: 2px;
-  padding: 0 0.2em;
-  font-style: normal;
-}
-
 /* ---------- Shared bits ---------- */
 .btn-ghost { background: transparent; color: var(--ink); }
 .btn-ghost:hover { background: var(--ink); color: var(--paper); }

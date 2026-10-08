@@ -50,19 +50,20 @@ The form validates the fields, then either:
 
 Both settings are at the top of `script.js`. The budget and timeline options are in `index.html`; adjust the budget ranges to match your pricing.
 
-## Before going live: placeholders
+## Pricing and terms
 
-Anything not yet known is wrapped in `<span class="todo">[...]</span>` and shows up highlighted with a dashed pink outline. To list them all:
+The published prices are starting points set from market benchmarks for comparable services (October 2026). Change them to suit:
 
-```sh
-grep -n 'class="todo"' index.html
-```
+| Item | On the site | Benchmark |
+|---|---|---|
+| Pre-launch audit | $3,500, two weeks | Fixed-price UX audits start around $1,500–2,000; paid roadmapping or discovery runs $1,500–5,000 over 1–3 weeks. This one also covers accessibility and QA. |
+| Fee credit | 30 days | Common pattern: the discovery fee comes off the first invoice if the client continues within 30 days. |
+| Partner retainer | from $5,000 / month | Fractional creative direction starts around $5,000–7,000 a month; commodity white-label hours run $500–5,000. |
+| Projects | from $10,000 | Discovery is typically 5–10% of a project; matches the "Under $10k" budget option in the form. |
+| Reply time | two business days | |
 
-They cover:
-
-- **Prices:** audit fee and timeframe, partner retainer and project minimums (these appear in the audit card, the engagement cards, and the contact section).
-- **Audit terms:** QA scope and how long the fee credit lasts.
-- **Partner quote** in the selected-work section. Use a real quote, with permission, or delete the `<figure class="quote">`.
-- **Contact:** reply time.
+Prices appear in the audit card, the engagement cards and the contact section; search `index.html` for `$` to find them all.
 
 The founder section and case notes come from Kevin's LinkedIn profile; keep them in step with it. Also check that the audit description and the agency promises match how you actually work. The accessibility deadlines are current as of October 2026.
+
+A partner quote block is commented out in the selected-work section. Add a real quote, with permission, when you have one.
