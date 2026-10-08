@@ -647,5 +647,16 @@ main > section:first-child:not(.hero) { padding-top: clamp(3rem, 8vw, 6.5rem); }
   .hero-motif { opacity: 0.16; }
 }
 
+/* Where the work has been published */
+.seen-in { padding: 2.5rem 0; border-top: 1px solid var(--rule); }
+.seen-grid { display: grid; gap: 1rem 3rem; align-items: center; }
+.seen-label {
+  font-family: var(--mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--muted); line-height: 1.4;
+}
+.seen-list { display: flex; flex-wrap: wrap; gap: 0.6rem 2rem; }
+.seen-list li { font-family: var(--serif); font-size: clamp(1.35rem, 2.2vw, 1.55rem); line-height: 1.15; color: var(--ink-2); }
+@media (min-width: 960px) { .seen-grid { grid-template-columns: 11rem 1fr; } }
+
 /* ---------- 404 ---------- */
 .notfound { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-block: 4rem; }
