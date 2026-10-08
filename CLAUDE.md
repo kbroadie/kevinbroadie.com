@@ -6,6 +6,7 @@ Static site for kevinbroadie.com (KBCS): `index.html`, `styles.css`, `script.js`
 
 - Case notes (selected work): the regional transportation grant, the country-club community's visual system, and the retail operations overhaul that integrated e-commerce. Don't use the museum IT systems upgrade as an example.
 - Kevin is a strong copyeditor (newsroom background, AP Stylebook); copyediting is part of the offer.
+- Services go well beyond websites: audits of print and pre-production and of systems and service (taking the roles of customer and employee to find pain points for ease, speed, and clarity), staff training, writing and designing public presentations, and acting as a sounding board.
 - Never invent results, quotes, or testimonials. Ask Kevin for specifics.
 
 ## Attribution
