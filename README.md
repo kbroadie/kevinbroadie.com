@@ -8,6 +8,7 @@ styles.css        all styles (light and dark themes via prefers-color-scheme)
 script.js         scroll reveals, footer year, contact form
 404.html          not-found page
 images/logo.png   KBCS mark (also the favicon)
+images/kevin.jpg  founder photo
 .nojekyll         tells GitHub Pages to serve the files as-is
 ```
 
@@ -35,10 +36,34 @@ styles.css
 script.js
 404.html
 images/logo.png
+images/kevin.jpg
 ```
 
 The repo-only files (`README.md`, `.nojekyll`) aren't needed on the host.
 
 ## Contact form
 
-The form doesn't post anywhere. It validates the fields and opens the visitor's email app with a pre-filled message. The recipient is `CONTACT_EMAIL` at the top of `script.js`.
+The form validates the fields, then either:
+
+- opens the visitor's email app with a pre-filled message to `CONTACT_EMAIL` (the default), or
+- if `FORM_ENDPOINT` is set, sends the message directly to a form service such as [Formspree](https://formspree.io), and falls back to the email app if that fails.
+
+Both settings are at the top of `script.js`. The budget and timeline options are in `index.html`; adjust the budget ranges to match your pricing.
+
+## Pricing and terms
+
+The published prices are starting points set from market benchmarks for comparable services (October 2026). Change them to suit:
+
+| Item | On the site | Benchmark |
+|---|---|---|
+| Pre-launch audit | $3,500, two weeks | Fixed-price UX audits start around $1,500–2,000; paid roadmapping or discovery runs $1,500–5,000 over 1–3 weeks. This one also covers accessibility and QA. |
+| Fee credit | 30 days | Common pattern: the discovery fee comes off the first invoice if the client continues within 30 days. |
+| Partner retainer | from $5,000 / month | Fractional creative direction starts around $5,000–7,000 a month; commodity white-label hours run $500–5,000. |
+| Projects | from $10,000 | Discovery is typically 5–10% of a project; matches the "Under $10k" budget option in the form. |
+| Reply time | two business days | |
+
+Prices appear in the audit card, the engagement cards and the contact section; search `index.html` for `$` to find them all.
+
+The founder section and case notes come from Kevin's LinkedIn profile; keep them in step with it. Also check that the audit description and the agency promises match how you actually work. The accessibility deadlines are current as of October 2026.
+
+A partner quote block is commented out in the selected-work section. Add a real quote, with permission, when you have one.
