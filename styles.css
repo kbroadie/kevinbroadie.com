@@ -376,6 +376,10 @@ form { display: grid; gap: 1.8rem; }
 .access .sec-head h2 { max-width: 16ch; }
 .access .sec-head h2 em { color: var(--magenta); }
 .access-grid { display: grid; gap: 2.5rem; margin-top: 3rem; }
+.extras { padding: var(--sec) 0; border-top: 1px solid var(--rule); }
+.extras .sec-head h2 { max-width: 16ch; }
+.checklist strong { color: var(--ink); font-weight: 600; }
+.offer-card h3 + .checklist { margin-top: -0.4rem; }
 .access-grid li { border-top: 1px solid var(--ink); padding-top: 1.4rem; }
 .access-grid h3 { font-size: 1.8rem; margin-bottom: 0.8rem; }
 .access-grid p:last-child { color: var(--muted); }

@@ -56,7 +56,7 @@ The published prices are starting points set from market benchmarks for comparab
 
 | Item | On the site | Benchmark |
 |---|---|---|
-| Pre-launch audit | $3,500, two weeks | Fixed-price UX audits start around $1,500–2,000; paid roadmapping or discovery runs $1,500–5,000 over 1–3 weeks. This one also covers accessibility and QA. |
+| Audit (digital, print, systems, copy) | from $3,500, about two weeks; fee set before starting | Fixed-price UX audits start around $1,500–2,000; paid roadmapping or discovery runs $1,500–5,000 over 1–3 weeks. Scope varies with what is audited. |
 | Fee credit | 30 days | Common pattern: the discovery fee comes off the first invoice if the client continues within 30 days. |
 | Partner retainer | from $5,000 / month | Fractional creative direction starts around $5,000–7,000 a month; commodity white-label hours run $500–5,000. |
 | Projects | from $10,000 | Discovery is typically 5–10% of a project; matches the "Under $10k" budget option in the form. |
