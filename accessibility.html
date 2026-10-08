@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Accessibility — KBCS</title>
 <meta name="description" content="WCAG 2.1 AA accessibility audits and fixes, tested by hand. No overlays. ADA Title II and European Accessibility Act deadlines explained.">
 <meta name="theme-color" content="#f3f1ec" media="(prefers-color-scheme: light)">
@@ -11,14 +11,17 @@
 <meta property="og:description" content="WCAG 2.1 AA accessibility audits and fixes, tested by hand. No overlays. ADA Title II and European Accessibility Act deadlines explained.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://kevinbroadie.com/accessibility.html">
+<meta property="og:image" content="https://kevinbroadie.com/images/photos/wind-farm-1024.webp">
 <!-- The GitHub Pages copy points search engines at the real domain -->
 <link rel="canonical" href="https://kevinbroadie.com/accessibility.html">
 <link rel="icon" type="image/png" href="images/logo.png">
+<link rel="apple-touch-icon" href="images/icons/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<script>document.documentElement.classList.add('js');</script>
+<script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('kbcs-theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -29,8 +32,7 @@
       <img src="images/logo.png" alt="" width="28" height="28"><span>KBCS</span>
     </a>
     <nav class="nav" aria-label="Primary">
-      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
-      <ul class="nav-links" id="nav-links">
+      <ul class="nav-links">
         <li><a href="audit.html">Audit</a></li>
         <li><a href="accessibility.html" aria-current="page">Accessibility</a></li>
         <li><a href="services.html">Services</a></li>
@@ -86,6 +88,51 @@
     </div>
   </section>
 
+  <section class="tool" aria-labelledby="tool-title">
+    <div class="wrap tool-grid">
+      <div class="sec-head">
+        <p class="eyebrow reveal">Try it</p>
+        <h2 id="tool-title" class="reveal">Check your own colors</h2>
+        <p class="sec-lead reveal">WCAG 2.1 AA needs a contrast ratio of at least 4.5:1 for body text, and 3:1 for large text and for buttons and icons. Enter a text color and a background color.</p>
+      </div>
+      <form class="cc reveal" id="cc" novalidate>
+        <div class="cc-inputs">
+          <div class="field">
+            <label for="cc-fg">Text color</label>
+            <div class="cc-pair"><input type="color" id="cc-fg-pick" value="#62636b" aria-label="Pick text color"><input id="cc-fg" name="fg" type="text" value="#62636b" inputmode="text" autocomplete="off" spellcheck="false" aria-describedby="cc-hint"></div>
+          </div>
+          <div class="field">
+            <label for="cc-bg">Background color</label>
+            <div class="cc-pair"><input type="color" id="cc-bg-pick" value="#f3f1ec" aria-label="Pick background color"><input id="cc-bg" name="bg" type="text" value="#f3f1ec" inputmode="text" autocomplete="off" spellcheck="false" aria-describedby="cc-hint"></div>
+          </div>
+          <button type="button" class="btn btn-ghost btn-sm" id="cc-swap">Swap colors</button>
+          <p class="cc-hint" id="cc-hint">Use six-digit hex codes, like #1a1a1f.</p>
+        </div>
+        <div class="cc-preview" id="cc-preview" aria-hidden="true">
+          <p class="cc-large">Large text sample</p>
+          <p>Body text: book your appointment online in two minutes.</p>
+        </div>
+        <div class="cc-result">
+          <p class="cc-ratio"><output id="cc-ratio" for="cc-fg cc-bg">5.3:1</output> <span>contrast</span></p>
+          <ul class="cc-checks" id="cc-checks">
+            <li data-min="4.5"><span class="cc-badge"></span> Body text, AA (4.5:1)</li>
+            <li data-min="3"><span class="cc-badge"></span> Large text, AA (3:1)</li>
+            <li data-min="3"><span class="cc-badge"></span> Buttons and icons, AA (3:1)</li>
+            <li data-min="7"><span class="cc-badge"></span> Body text, AAA (7:1)</li>
+          </ul>
+          <p class="visually-hidden" id="cc-live" aria-live="polite"></p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <figure class="photo-band reveal">
+      <img src="images/photos/keyboard-1024.webp" srcset="images/photos/keyboard-640.webp 640w, images/photos/keyboard-1024.webp 1024w" sizes="(min-width: 1240px) 1240px, 100vw" alt="Close-up of keys on a computer keyboard" width="1024" height="765" loading="lazy" decoding="async">
+      <figcaption>Tested by hand, with a keyboard and the tools people actually use</figcaption>
+    </figure>
+  </div>
+
   <section class="cta-band" aria-labelledby="cta-title">
     <div class="wrap cta-grid">
       <div>
@@ -118,9 +165,47 @@
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
-    <span>© <span id="yr">2026</span> KBCS · Design &amp; technology partner</span>
+    <div class="foot-end">
+      <div class="theme-control" role="group" aria-label="Color theme">
+        <button type="button" data-theme-choice="auto" aria-pressed="true">Auto</button>
+        <button type="button" data-theme-choice="light" aria-pressed="false">Light</button>
+        <button type="button" data-theme-choice="dark" aria-pressed="false">Dark</button>
+      </div>
+      <span>© <span id="yr">2026</span> KBCS · Design &amp; technology partner</span>
+    </div>
   </div>
 </footer>
+
+<nav class="tabbar" aria-label="Sections">
+  <a href="index.html"><svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span>Home</span></a>
+  <a href="services.html"><svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></svg><span>Services</span></a>
+  <a href="audit.html"><svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.6-4.6"/><path d="m7.6 10.6 2 2 3.8-3.8"/></svg><span>Audit</span></a>
+  <a href="work.html"><svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2.2"/><circle cx="9" cy="10" r="1.8"/><path d="m21 15.5-4.8-4.8L7 20"/></svg><span>Work</span></a>
+  <button type="button" class="tab-more" aria-haspopup="dialog" aria-controls="more-sheet" data-current="true"><svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/></svg><span>More</span></button>
+</nav>
+
+<dialog class="sheet" id="more-sheet" aria-labelledby="more-title">
+  <div class="sheet-inner">
+    <div class="sheet-handle" aria-hidden="true"></div>
+    <div class="sheet-head">
+      <h2 id="more-title">More</h2>
+      <button type="button" class="sheet-close" data-close aria-label="Close">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <ul class="sheet-links">
+      <li><a href="accessibility.html" aria-current="page"><span>Accessibility</span><small>WCAG 2.1 AA audits, deadlines, contrast checker</small></a></li>
+      <li><a href="about.html"><span>About</span><small>Kevin Broadie and how we work</small></a></li>
+      <li><a href="contact.html"><span>Contact</span><small>Start a project or book an audit</small></a></li>
+    </ul>
+    <p class="sheet-label">Theme</p>
+    <div class="theme-control" role="group" aria-label="Color theme">
+        <button type="button" data-theme-choice="auto" aria-pressed="true">Auto</button>
+        <button type="button" data-theme-choice="light" aria-pressed="false">Light</button>
+        <button type="button" data-theme-choice="dark" aria-pressed="false">Dark</button>
+      </div>
+  </div>
+</dialog>
 
 <script src="script.js"></script>
 </body>

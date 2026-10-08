@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Start a project — KBCS</title>
 <meta name="description" content="Tell us what you are working on, in confidence. We reply within two business days.">
 <meta name="theme-color" content="#f3f1ec" media="(prefers-color-scheme: light)">
@@ -11,14 +11,17 @@
 <meta property="og:description" content="Tell us what you are working on, in confidence. We reply within two business days.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://kevinbroadie.com/contact.html">
+<meta property="og:image" content="https://kevinbroadie.com/images/photos/wind-farm-1024.webp">
 <!-- The GitHub Pages copy points search engines at the real domain -->
 <link rel="canonical" href="https://kevinbroadie.com/contact.html">
 <link rel="icon" type="image/png" href="images/logo.png">
+<link rel="apple-touch-icon" href="images/icons/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<script>document.documentElement.classList.add('js');</script>
+<script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('kbcs-theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -29,8 +32,7 @@
       <img src="images/logo.png" alt="" width="28" height="28"><span>KBCS</span>
     </a>
     <nav class="nav" aria-label="Primary">
-      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
-      <ul class="nav-links" id="nav-links">
+      <ul class="nav-links">
         <li><a href="audit.html">Audit</a></li>
         <li><a href="accessibility.html">Accessibility</a></li>
         <li><a href="services.html">Services</a></li>
@@ -55,6 +57,10 @@
           <li>Happy to sign an NDA first, if you want one.</li>
           <li>Audits from $3,500 · projects from $10,000</li>
         </ul>
+        <figure class="contact-photo reveal">
+          <img src="images/photos/joshua-tree-1024.webp" srcset="images/photos/joshua-tree-640.webp 640w, images/photos/joshua-tree-1024.webp 1023w" sizes="(min-width: 960px) 30vw, 100vw" alt="A Joshua tree at sunset in Joshua Tree National Park" width="1023" height="682" loading="lazy" decoding="async">
+          <figcaption>Joshua Tree National Park, a short drive from Palm Springs</figcaption>
+        </figure>
       </div>
 
       <div class="contact-panel reveal">
@@ -79,52 +85,44 @@
               <input id="phone" name="phone" type="tel" autocomplete="tel">
             </div>
           </div>
-          <div class="row">
-            <div class="field">
-              <label for="role">You are</label>
-              <select id="role" name="role" required>
-                <option value="">Select one</option>
-                <option>An organization</option>
-                <option>An agency</option>
-                <option>Something else</option>
-              </select>
+          <fieldset class="field pills">
+            <legend>You are</legend>
+            <div class="pill-row">
+              <label class="pill"><input type="radio" name="role" value="An organization" required><span>An organization</span></label>
+              <label class="pill"><input type="radio" name="role" value="An agency"><span>An agency</span></label>
+              <label class="pill"><input type="radio" name="role" value="Something else"><span>Something else</span></label>
             </div>
-            <div class="field">
-              <label for="interest">Interested in</label>
-              <select id="interest" name="interest" required>
-                <option value="">Select one</option>
-                <option>An audit</option>
-                <option>A project</option>
-                <option>Partner retainer</option>
-                <option>Training or a presentation</option>
-                <option>A sounding board</option>
-                <option>Not sure yet</option>
-              </select>
+          </fieldset>
+          <fieldset class="field pills">
+            <legend>Interested in</legend>
+            <div class="pill-row">
+              <label class="pill"><input type="radio" name="interest" value="An audit" required><span>An audit</span></label>
+              <label class="pill"><input type="radio" name="interest" value="A project"><span>A project</span></label>
+              <label class="pill"><input type="radio" name="interest" value="Partner retainer"><span>Partner retainer</span></label>
+              <label class="pill"><input type="radio" name="interest" value="Training or a presentation"><span>Training or a presentation</span></label>
+              <label class="pill"><input type="radio" name="interest" value="A sounding board"><span>A sounding board</span></label>
+              <label class="pill"><input type="radio" name="interest" value="Not sure yet"><span>Not sure yet</span></label>
             </div>
-          </div>
-          <div class="row">
-            <div class="field">
-              <label for="budget">Budget <span class="opt">optional</span></label>
-              <select id="budget" name="budget">
-                <option value="">Select a range</option>
-                <option>Under $10k</option>
-                <option>$10k–$25k</option>
-                <option>$25k–$50k</option>
-                <option>$50k+</option>
-                <option>Not sure yet</option>
-              </select>
+          </fieldset>
+          <fieldset class="field pills">
+            <legend>Budget <span class="opt">optional</span></legend>
+            <div class="pill-row">
+              <label class="pill"><input type="radio" name="budget" value="Under $10k"><span>Under $10k</span></label>
+              <label class="pill"><input type="radio" name="budget" value="$10k–$25k"><span>$10k–$25k</span></label>
+              <label class="pill"><input type="radio" name="budget" value="$25k–$50k"><span>$25k–$50k</span></label>
+              <label class="pill"><input type="radio" name="budget" value="$50k+"><span>$50k+</span></label>
+              <label class="pill"><input type="radio" name="budget" value="Not sure yet"><span>Not sure yet</span></label>
             </div>
-            <div class="field">
-              <label for="timeline">Timeline <span class="opt">optional</span></label>
-              <select id="timeline" name="timeline">
-                <option value="">Select one</option>
-                <option>As soon as possible</option>
-                <option>Within a month</option>
-                <option>In 1–3 months</option>
-                <option>Just exploring</option>
-              </select>
+          </fieldset>
+          <fieldset class="field pills">
+            <legend>Timeline <span class="opt">optional</span></legend>
+            <div class="pill-row">
+              <label class="pill"><input type="radio" name="timeline" value="As soon as possible"><span>As soon as possible</span></label>
+              <label class="pill"><input type="radio" name="timeline" value="Within a month"><span>Within a month</span></label>
+              <label class="pill"><input type="radio" name="timeline" value="In 1–3 months"><span>In 1–3 months</span></label>
+              <label class="pill"><input type="radio" name="timeline" value="Just exploring"><span>Just exploring</span></label>
             </div>
-          </div>
+          </fieldset>
           <div class="field">
             <label for="hear">How did you hear about us? <span class="opt">optional</span></label>
             <select id="hear" name="hear">
@@ -173,9 +171,47 @@
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
-    <span>© <span id="yr">2026</span> KBCS · Design &amp; technology partner</span>
+    <div class="foot-end">
+      <div class="theme-control" role="group" aria-label="Color theme">
+        <button type="button" data-theme-choice="auto" aria-pressed="true">Auto</button>
+        <button type="button" data-theme-choice="light" aria-pressed="false">Light</button>
+        <button type="button" data-theme-choice="dark" aria-pressed="false">Dark</button>
+      </div>
+      <span>© <span id="yr">2026</span> KBCS · Design &amp; technology partner</span>
+    </div>
   </div>
 </footer>
+
+<nav class="tabbar" aria-label="Sections">
+  <a href="index.html"><svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span>Home</span></a>
+  <a href="services.html"><svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></svg><span>Services</span></a>
+  <a href="audit.html"><svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.6-4.6"/><path d="m7.6 10.6 2 2 3.8-3.8"/></svg><span>Audit</span></a>
+  <a href="work.html"><svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2.2"/><circle cx="9" cy="10" r="1.8"/><path d="m21 15.5-4.8-4.8L7 20"/></svg><span>Work</span></a>
+  <button type="button" class="tab-more" aria-haspopup="dialog" aria-controls="more-sheet" data-current="true"><svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/></svg><span>More</span></button>
+</nav>
+
+<dialog class="sheet" id="more-sheet" aria-labelledby="more-title">
+  <div class="sheet-inner">
+    <div class="sheet-handle" aria-hidden="true"></div>
+    <div class="sheet-head">
+      <h2 id="more-title">More</h2>
+      <button type="button" class="sheet-close" data-close aria-label="Close">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <ul class="sheet-links">
+      <li><a href="accessibility.html"><span>Accessibility</span><small>WCAG 2.1 AA audits, deadlines, contrast checker</small></a></li>
+      <li><a href="about.html"><span>About</span><small>Kevin Broadie and how we work</small></a></li>
+      <li><a href="contact.html" aria-current="page"><span>Contact</span><small>Start a project or book an audit</small></a></li>
+    </ul>
+    <p class="sheet-label">Theme</p>
+    <div class="theme-control" role="group" aria-label="Color theme">
+        <button type="button" data-theme-choice="auto" aria-pressed="true">Auto</button>
+        <button type="button" data-theme-choice="light" aria-pressed="false">Light</button>
+        <button type="button" data-theme-choice="dark" aria-pressed="false">Dark</button>
+      </div>
+  </div>
+</dialog>
 
 <script src="script.js"></script>
 </body>

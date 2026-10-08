@@ -1,6 +1,6 @@
 # Project notes
 
-Static site for kevinbroadie.com (KBCS), no build step: `index.html`, `audit.html`, `accessibility.html`, `services.html`, `work.html`, `about.html`, `contact.html`, plus `styles.css` and `script.js`. Each page has its own copy of the header and footer; keep them identical across pages (and update the README upload list when adding a page). See README.md for previewing, GitHub Pages, and the files uploaded to the live web host.
+Static site for kevinbroadie.com (KBCS), no build step: `index.html`, `audit.html`, `accessibility.html`, `services.html`, `work.html`, `about.html`, `contact.html`, plus `404.html`, `offline.html`, `styles.css`, `script.js`, `sw.js` (offline support) and `manifest.webmanifest`. Each page has its own copy of the shared parts (header, footer with the theme switch, phone tab bar, and "More" sheet); keep them identical across pages, and when adding a page update the README upload list and the `PRECACHE` list in `sw.js`. Bump `VERSION` in `sw.js` with every change to the site's files. See README.md for previewing, GitHub Pages, and the files uploaded to the live web host.
 
 ## Positioning
 

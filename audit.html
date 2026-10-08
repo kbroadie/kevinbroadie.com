@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>The audit — KBCS</title>
 <meta name="description" content="Fixed-fee audits of websites, print and pre-production, and the systems behind them, plus a line-by-line copyedit. One clear report, from $3,500.">
 <meta name="theme-color" content="#f3f1ec" media="(prefers-color-scheme: light)">
@@ -11,14 +11,17 @@
 <meta property="og:description" content="Fixed-fee audits of websites, print and pre-production, and the systems behind them, plus a line-by-line copyedit. One clear report, from $3,500.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://kevinbroadie.com/audit.html">
+<meta property="og:image" content="https://kevinbroadie.com/images/photos/wind-farm-1024.webp">
 <!-- The GitHub Pages copy points search engines at the real domain -->
 <link rel="canonical" href="https://kevinbroadie.com/audit.html">
 <link rel="icon" type="image/png" href="images/logo.png">
+<link rel="apple-touch-icon" href="images/icons/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<script>document.documentElement.classList.add('js');</script>
+<script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('kbcs-theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -29,8 +32,7 @@
       <img src="images/logo.png" alt="" width="28" height="28"><span>KBCS</span>
     </a>
     <nav class="nav" aria-label="Primary">
-      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
-      <ul class="nav-links" id="nav-links">
+      <ul class="nav-links">
         <li><a href="audit.html" aria-current="page">Audit</a></li>
         <li><a href="accessibility.html">Accessibility</a></li>
         <li><a href="services.html">Services</a></li>
@@ -89,6 +91,37 @@
     </div>
   </section>
 
+  <section class="builder" aria-labelledby="builder-title">
+    <div class="wrap">
+      <form class="builder-card reveal" action="contact.html" method="get">
+        <input type="hidden" name="interest" value="An audit">
+        <div class="builder-head">
+          <p class="eyebrow">Build your request</p>
+          <h2 id="builder-title">What should we look at?</h2>
+          <p class="sec-lead">Pick everything that applies. Your choices carry over to the contact form.</p>
+        </div>
+        <fieldset class="toggle-group">
+          <legend class="visually-hidden">Areas to audit</legend>
+          <label class="toggle"><input type="checkbox" name="scope" value="Digital"><span class="toggle-body"><strong>Digital</strong><small>Website, accessibility, browsers</small></span></label>
+          <label class="toggle"><input type="checkbox" name="scope" value="Print and pre-production"><span class="toggle-body"><strong>Print and pre-production</strong><small>Proofs, prepress, direct mail</small></span></label>
+          <label class="toggle"><input type="checkbox" name="scope" value="Systems and service"><span class="toggle-body"><strong>Systems and service</strong><small>Every step, as customer and employee</small></span></label>
+          <label class="toggle"><input type="checkbox" name="scope" value="Copy"><span class="toggle-body"><strong>Copy</strong><small>Line-by-line copyedit, AP style</small></span></label>
+        </fieldset>
+        <div class="builder-foot">
+          <p class="builder-summary" id="builder-summary" aria-live="polite">Nothing selected yet.</p>
+          <button type="submit" class="btn">Continue <span class="arrow" aria-hidden="true">→</span></button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <figure class="photo-band reveal">
+      <img src="images/photos/type-case-1024.webp" srcset="images/photos/type-case-640.webp 640w, images/photos/type-case-1024.webp 1000w" sizes="(min-width: 1240px) 1240px, 100vw" alt="A printer’s case of wooden and metal type" width="1000" height="667" loading="lazy" decoding="async">
+      <figcaption>Print and pre-production, checked before anything goes to press</figcaption>
+    </figure>
+  </div>
+
   <section class="sample" aria-labelledby="sample-title">
     <div class="wrap sample-grid">
       <div class="sec-head">
@@ -146,9 +179,47 @@
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
-    <span>© <span id="yr">2026</span> KBCS · Design &amp; technology partner</span>
+    <div class="foot-end">
+      <div class="theme-control" role="group" aria-label="Color theme">
+        <button type="button" data-theme-choice="auto" aria-pressed="true">Auto</button>
+        <button type="button" data-theme-choice="light" aria-pressed="false">Light</button>
+        <button type="button" data-theme-choice="dark" aria-pressed="false">Dark</button>
+      </div>
+      <span>© <span id="yr">2026</span> KBCS · Design &amp; technology partner</span>
+    </div>
   </div>
 </footer>
+
+<nav class="tabbar" aria-label="Sections">
+  <a href="index.html"><svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span>Home</span></a>
+  <a href="services.html"><svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></svg><span>Services</span></a>
+  <a href="audit.html" aria-current="page"><svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.6-4.6"/><path d="m7.6 10.6 2 2 3.8-3.8"/></svg><span>Audit</span></a>
+  <a href="work.html"><svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2.2"/><circle cx="9" cy="10" r="1.8"/><path d="m21 15.5-4.8-4.8L7 20"/></svg><span>Work</span></a>
+  <button type="button" class="tab-more" aria-haspopup="dialog" aria-controls="more-sheet"><svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/></svg><span>More</span></button>
+</nav>
+
+<dialog class="sheet" id="more-sheet" aria-labelledby="more-title">
+  <div class="sheet-inner">
+    <div class="sheet-handle" aria-hidden="true"></div>
+    <div class="sheet-head">
+      <h2 id="more-title">More</h2>
+      <button type="button" class="sheet-close" data-close aria-label="Close">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <ul class="sheet-links">
+      <li><a href="accessibility.html"><span>Accessibility</span><small>WCAG 2.1 AA audits, deadlines, contrast checker</small></a></li>
+      <li><a href="about.html"><span>About</span><small>Kevin Broadie and how we work</small></a></li>
+      <li><a href="contact.html"><span>Contact</span><small>Start a project or book an audit</small></a></li>
+    </ul>
+    <p class="sheet-label">Theme</p>
+    <div class="theme-control" role="group" aria-label="Color theme">
+        <button type="button" data-theme-choice="auto" aria-pressed="true">Auto</button>
+        <button type="button" data-theme-choice="light" aria-pressed="false">Light</button>
+        <button type="button" data-theme-choice="dark" aria-pressed="false">Dark</button>
+      </div>
+  </div>
+</dialog>
 
 <script src="script.js"></script>
 </body>

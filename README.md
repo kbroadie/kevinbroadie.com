@@ -3,22 +3,38 @@
 Source for [kevinbroadie.com](https://kevinbroadie.com), the KBCS design & technology partner site. Plain HTML, CSS and JavaScript with no build step, published with GitHub Pages.
 
 ```
-index.html          home: hero, overview of what we do, engagements
-audit.html          the audit: what we audit, fee and terms
-accessibility.html  WCAG 2.1 AA, deadlines, no overlays
-services.html       the five steps, training, presentations, advising
-work.html           selected work
-about.html          Kevin Broadie, how we work
-contact.html        contact form
-404.html            not-found page
-styles.css          all styles (light and dark themes via prefers-color-scheme)
-script.js           phone menu, scroll reveals, footer year, contact form
-images/logo.png     KBCS mark (also the favicon)
-images/kevin.jpg    founder photo
-.nojekyll           tells GitHub Pages to serve the files as-is
-
-Every page carries its own copy of the header (navigation) and footer. When you change one, change them all.
+index.html            home: hero, client logos, overview, featured work, engagements
+audit.html            the audit: what we audit, fee and terms, "build your request" picker
+accessibility.html    WCAG 2.1 AA, deadlines, no overlays, live contrast checker
+services.html         the five steps, training, presentations, advising
+work.html             case notes, filterable project gallery, clients by industry
+about.html            Kevin Broadie, how we work
+contact.html          contact form
+404.html              not-found page
+offline.html          shown when a visitor is offline and the page isn't saved yet
+styles.css            all styles (light and dark themes)
+script.js             tab bar sheet, theme switch, gallery, tools, contact form
+sw.js                 service worker: offline support
+manifest.webmanifest  lets phones add the site to the home screen as an app
+images/logo.png       KBCS mark (also the favicon)
+images/kevin.jpg      founder photo
+images/icons/         home-screen icons
+images/logos/         client and publication logos (one-color silhouettes)
+images/photos/        stock photos (credits below)
+images/work/          project images
+.nojekyll             tells GitHub Pages to serve the files as-is
 ```
+
+Every page carries its own copy of the shared parts: the header, the footer (with the Auto / Light / Dark theme switch), the phone tab bar, and the "More" sheet. When you change one, change them all.
+
+## How it behaves like an app
+
+- **Phones and tablets** get a bottom tab bar (Home, Services, Audit, Work, More). "More" opens a sheet with the other pages and the theme switch. Desktops keep the header navigation.
+- **Theme:** Auto follows the device setting; Light or Dark is remembered in the browser.
+- **Page transitions** fade between pages in browsers that support them. Animations are skipped for visitors who turn on reduced motion.
+- **Work:** the gallery filters by industry, and each project opens in a sheet with swipeable images. Links like `work.html#grounded` open a project directly.
+- **Offline and home screen:** `sw.js` saves pages as they're visited so they open without a connection, and `manifest.webmanifest` lets visitors add the site to their home screen. **Bump `VERSION` at the top of `sw.js` whenever you upload changes**, so returning visitors get the new files.
+- The client logo strip scrolls slowly and has a Pause button. It sits still when the logos fit, and for visitors who prefer reduced motion.
 
 ## Preview locally
 
@@ -47,10 +63,12 @@ work.html
 about.html
 contact.html
 404.html
+offline.html
 styles.css
 script.js
-images/logo.png
-images/kevin.jpg
+sw.js
+manifest.webmanifest
+images/   (the whole folder: logo.png, kevin.jpg, icons/, logos/, photos/, work/)
 ```
 
 The repo-only files (`README.md`, `.nojekyll`) aren't needed on the host.
@@ -62,7 +80,7 @@ The form validates the fields, then either:
 - opens the visitor's email app with a pre-filled message to `CONTACT_EMAIL` (the default), or
 - if `FORM_ENDPOINT` is set, sends the message directly to a form service such as [Formspree](https://formspree.io), and falls back to the email app if that fails.
 
-Both settings are at the top of `script.js`. The budget and timeline options are in `contact.html`; adjust the budget ranges to match your pricing. Links such as `contact.html?interest=An+audit` pre-select the form's "Interested in" and "You are" options.
+Both settings are at the top of `script.js`. The choices ("You are", "Interested in", budget, timeline) are tap-to-select pills in `contact.html`; adjust the budget ranges to match your pricing. Links such as `contact.html?interest=An+audit` pre-select the matching pills, and the audit page's "build your request" picker carries the chosen areas into the message.
 
 ## Pricing and terms
 
@@ -81,3 +99,19 @@ Prices appear on the home, audit and contact pages; search the HTML files for `$
 The founder section comes from Kevin's LinkedIn profile; keep it in step with it. Also check that the audit description and the agency promises match how you actually work. The accessibility deadlines are current as of October 2026.
 
 A partner quote block is commented out in the selected-work section. Add a real quote, with permission, when you have one.
+
+## Images and credits
+
+Stock photos are public domain or CC0 from Flickr, so no credit is required; they're listed here for the record.
+
+| File | Photo | By |
+|---|---|---|
+| `photos/wind-farm` | [Palm Springs Windmills](https://www.flickr.com/photos/51314820@N00/15914534007) | Henrique Vicente (CC0) |
+| `photos/joshua-tree` | [Joshua tree sunset](https://www.flickr.com/photos/115357548@N08/52013517656) | Joshua Tree National Park (public domain) |
+| `photos/keyboard` | [Keys on a Keyboard](https://www.flickr.com/photos/132795455@N08/17596421283) | Image Catalog (CC0) |
+| `photos/type-case` | [Type face for printing press](https://www.flickr.com/photos/59809888@N06/6873457237) | South Australian History Network (CC0) |
+| `photos/laptop` | [Hands Typing on Laptop Keyboard](https://www.flickr.com/photos/132795455@N08/21713977623) | Image Catalog (CC0) |
+
+Project images in `images/work/` are from the published case studies for those clients. Logos in `images/logos/` belong to their owners, made one-color so they sit together; dark mode inverts them. Clients without a usable logo (Babe's Barbecue, Bootlegger Tiki, The Draughtsman, Persimmon, Arroyos at Desert Princess, Palm Springs Life) appear as text until a logo is supplied.
+
+Each photo comes in two widths (640 and 1024 or 1200 pixels, WebP), and the browser picks the right one for the screen.
