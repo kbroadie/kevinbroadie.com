@@ -1,11 +1,11 @@
 // Address the contact form's email draft is sent to.
-// TODO: set this to the real inbox before deploying.
+// TODO: set this to the real inbox.
 const CONTACT_EMAIL = 'hello@example.com';
 
 // Footer year
 document.getElementById('yr').textContent = new Date().getFullYear();
 
-// Fade sections in as they scroll into view
+// Fade content in as it scrolls into view
 const reveals = document.querySelectorAll('.reveal');
 if ('IntersectionObserver' in window) {
   const io = new IntersectionObserver((entries) => {
@@ -15,17 +15,11 @@ if ('IntersectionObserver' in window) {
         io.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
   reveals.forEach((el) => io.observe(el));
 } else {
   reveals.forEach((el) => el.classList.add('in'));
 }
-
-// Dim the "How did you hear" select while it shows its placeholder
-const hear = document.getElementById('hear');
-const syncHear = () => { hear.style.color = hear.value ? '' : 'var(--faint)'; };
-hear.addEventListener('change', syncHear);
-syncHear();
 
 // Contact form: validate, then open a pre-filled email draft
 const form = document.getElementById('form');
@@ -54,6 +48,7 @@ form.addEventListener('submit', (e) => {
     + `?subject=${encodeURIComponent(subject)}`
     + `&body=${encodeURIComponent(lines.join('\n'))}`;
 
-  form.style.display = 'none';
-  success.classList.add('show');
+  form.hidden = true;
+  success.hidden = false;
+  success.focus();
 });
