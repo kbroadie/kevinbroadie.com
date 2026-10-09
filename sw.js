@@ -1,5 +1,5 @@
 // Offline support. Bump VERSION with every release so visitors pick up the new files.
-const VERSION = 'kbcs-2026-10-08';
+const VERSION = 'kbcs-2026-10-09';
 
 const PRECACHE = [
   './',

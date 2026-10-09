@@ -19,7 +19,7 @@ manifest.webmanifest  lets phones add the site to the home screen as an app
 images/logo.png       KBCS mark (also the favicon)
 images/kevin.jpg      founder photo
 images/icons/         home-screen icons
-images/logos/         client and publication logos (one-color silhouettes)
+images/logos/         client and publication logos (one-color WebP silhouettes)
 images/photos/        stock photos (credits below)
 images/work/          project images
 .nojekyll             tells GitHub Pages to serve the files as-is
@@ -32,6 +32,8 @@ Every page carries its own copy of the shared parts: the header, the footer (wit
 - **Phones and tablets** get a bottom tab bar (Home, Services, Audit, Work, More). "More" opens a sheet with the other pages and the theme switch. Desktops keep the header navigation.
 - **Theme:** Auto follows the device setting; Light or Dark is remembered in the browser.
 - **Page transitions** fade between pages in browsers that support them. Animations are skipped for visitors who turn on reduced motion.
+- **Swipe between sections** on touch screens, in tab bar order: Home, Services, Audit, Work, Accessibility, About, Contact. A label shows where the swipe leads, and the page slides in from that side. Swipes are ignored on form fields, the Work filters and image carousels, the contrast checker, and the survey demo, and within 24 pixels of the screen edge (left to the phone's own back gesture). The tab bar does the same job for anyone who doesn't swipe. First-time phone visitors get a one-line tip.
+- **Custom apps demo:** the Services page has a working pairwise survey (ten head-to-head questions, then a ranked result), labeled as a demo with made-up options.
 - **Work:** the gallery filters by industry, and each project opens in a sheet with swipeable images. Links like `work.html#grounded` open a project directly.
 - **Offline and home screen:** `sw.js` saves pages as they're visited so they open without a connection, and `manifest.webmanifest` lets visitors add the site to their home screen. **Bump `VERSION` at the top of `sw.js` whenever you upload changes**, so returning visitors get the new files.
 - The client logo strip scrolls slowly and has a Pause button. It sits still when the logos fit, and for visitors who prefer reduced motion.
@@ -77,10 +79,10 @@ The repo-only files (`README.md`, `.nojekyll`) aren't needed on the host.
 
 The form validates the fields, then either:
 
-- opens the visitor's email app with a pre-filled message to `CONTACT_EMAIL` (the default), or
+- opens the visitor's email app with a pre-filled message to `CONTACT_EMAIL` (kbroadie+kbcs@gmail.com, the default), or
 - if `FORM_ENDPOINT` is set, sends the message directly to a form service such as [Formspree](https://formspree.io), and falls back to the email app if that fails.
 
-Both settings are at the top of `script.js`. The choices ("You are", "Interested in", budget, timeline) are tap-to-select pills in `contact.html`; adjust the budget ranges to match your pricing. Links such as `contact.html?interest=An+audit` pre-select the matching pills, and the audit page's "build your request" picker carries the chosen areas into the message.
+Both settings are at the top of `script.js`. The same address and the phone number (760-409-6303) appear in every page's footer and "More" sheet, on the contact page, and in the home page's structured data. The choices ("You are", "Interested in", budget, timeline) are tap-to-select pills in `contact.html`; adjust the budget ranges to match your pricing. Links such as `contact.html?interest=An+audit` pre-select the matching pills, and the audit page's "build your request" picker carries the chosen areas into the message.
 
 ## Pricing and terms
 
@@ -112,6 +114,8 @@ Stock photos are public domain or CC0 from Flickr, so no credit is required; the
 | `photos/type-case` | [Type face for printing press](https://www.flickr.com/photos/59809888@N06/6873457237) | South Australian History Network (CC0) |
 | `photos/laptop` | [Hands Typing on Laptop Keyboard](https://www.flickr.com/photos/132795455@N08/21713977623) | Image Catalog (CC0) |
 
-Project images in `images/work/` are from the published case studies for those clients. Logos in `images/logos/` belong to their owners, made one-color so they sit together; dark mode inverts them. Clients without a usable logo (Babe's Barbecue, Bootlegger Tiki, The Draughtsman, Persimmon, Arroyos at Desert Princess, Palm Springs Life) appear as text until a logo is supplied.
+Project images in `images/work/` are from the published case studies for those clients. Logos in `images/logos/` belong to their owners, made one-color so they sit together; dark mode inverts them. The Palm Springs Life logo comes from the magazine's own site, by way of its Internet Archive copy. Clients without a usable logo (Babe's Barbecue, Bootlegger Tiki, The Draughtsman, Persimmon, Arroyos at Desert Princess) appear as text until a logo is supplied.
 
-Each photo comes in two widths (640 and 1024 or 1200 pixels, WebP), and the browser picks the right one for the screen.
+Logos are sized by visual weight, not by box: each `<img>` carries `--s` (a scale, from its proportions and how much ink it has) and sometimes `--y` (a small vertical nudge toward its visual center). A wide, light wordmark gets more height than a compact, heavy badge, so the row reads evenly. When you add a logo, trim it tight, make it one color on transparent, and start from `--s:1`, then adjust by eye.
+
+Photos are WebP, sized for where they appear. Each photo band has a phone version (640 pixels wide) and a desktop version pre-cropped to the band's 21:9 shape (`-wide`), so no screen downloads pixels it won't show. Bands weigh 6–45 KB on phones and 10–85 KB on desktops. Keep new images in the same range: compress them, and never ship one image to every screen size.
