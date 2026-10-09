@@ -11,7 +11,7 @@
 <meta property="og:description" content="Fixed-fee audits of websites, print and pre-production, and the systems behind them, plus a line-by-line copyedit. One clear report, from $3,500.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://kevinbroadie.com/audit.html">
-<meta property="og:image" content="https://kevinbroadie.com/images/photos/wind-farm-1024.webp">
+<meta property="og:image" content="https://kevinbroadie.com/images/photos/wind-farm-wide.webp">
 <!-- The GitHub Pages copy points search engines at the real domain -->
 <link rel="canonical" href="https://kevinbroadie.com/audit.html">
 <link rel="icon" type="image/png" href="images/logo.png">
@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('kbcs-theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t);}catch(e){}})();</script>
+<script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('kbcs-theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t);}catch(e){}addEventListener('pagereveal',function(e){try{var s=sessionStorage.getItem('kbcs-swipe');sessionStorage.removeItem('kbcs-swipe');if(s&&e.viewTransition)e.viewTransition.types.add('swipe-'+s);}catch(x){}});})();</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -117,7 +117,7 @@
 
   <div class="wrap">
     <figure class="photo-band reveal">
-      <img src="images/photos/type-case-1024.webp" srcset="images/photos/type-case-640.webp 640w, images/photos/type-case-1024.webp 1000w" sizes="(min-width: 1240px) 1240px, 100vw" alt="A printer’s case of wooden and metal type" width="1000" height="667" loading="lazy" decoding="async">
+      <picture><source media="(min-width: 640px)" srcset="images/photos/type-case-wide.webp" width="1000" height="429"><img src="images/photos/type-case-640.webp" alt="A printer’s case of wooden and metal type" width="640" height="427" loading="lazy" decoding="async"></picture>
       <figcaption>Print and pre-production, checked before anything goes to press</figcaption>
     </figure>
   </div>
@@ -135,10 +135,10 @@
           <p class="report-title">Spring member campaign: website, mailer, and sign-up flow</p>
           <ol class="findings">
             <li><span class="sev sev-1">Critical</span><span class="area">Print</span><p>The mailer’s return address sits inside the barcode clear zone, which can send pieces back undelivered. <b>Fix:</b> move it up before the press run.</p></li>
-            <li><span class="sev sev-2">High</span><span class="area">Accessibility</span><p>White text on the light blue “Join” button measures 2.3:1. WCAG 2.1 AA needs 4.5:1. <b>Fix:</b> darken the button to #0b6e8f (5.8:1).</p></li>
+            <li><span class="sev sev-2">High</span><span class="area">Accessibility</span><p>White text on the light blue “Join” button measures 2.3:1. WCAG 2.1 AA needs 4.5:1. <b>Fix:</b> darken the button to #0b6e8f (5.7:1).</p></li>
             <li><span class="sev sev-2">High</span><span class="area">Systems</span><p>New members type their address twice: once to join, again to receive the welcome kit. <b>Fix:</b> carry it over from the first form.</p></li>
             <li><span class="sev sev-3">Medium</span><span class="area">Copy</span><p>“Its” appears for “it’s” in two headlines, and dates mix “Sept.” and “September.” <b>Fix:</b> corrected copy attached, in AP style.</p></li>
-            <li><span class="sev sev-4">Low</span><span class="area">Digital</span><p>The sign-up page loads a 2.4 MB photo on phones. <b>Fix:</b> serve a smaller version for small screens.</p></li>
+            <li><span class="sev sev-3">Medium</span><span class="area">Digital</span><p>The sign-up page’s main photo is a 2.4 MB file, sent to every screen. <b>Fix:</b> resize and compress it to under 200 KB, and send phones a smaller version still.</p></li>
           </ol>
           <div class="report-foot"><span>Findings 1–5 of 23</span><span>Page 3</span></div>
         </div>
@@ -154,7 +154,7 @@
         <h2 id="cta-title" class="reveal">Bring us in, <em>quietly</em>.</h2>
       </div>
       <div class="cta-actions reveal">
-        <p>I take on a small number of engagements, most of which come through referrals, and reply within two business days.</p>
+        <p>I take on a small number of engagements across Southern California, most of them by referral, and reply within two business days.</p>
         <div class="cta-buttons">
           <a href="contact.html" class="btn">Start a project <span class="arrow" aria-hidden="true">→</span></a>
           <a href="contact.html?interest=An+audit" class="btn btn-ghost">Book an audit</a>
@@ -179,6 +179,7 @@
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
+    <p class="foot-contact"><a href="tel:+17604096303">760-409-6303</a><a href="mailto:kbroadie+kbcs@gmail.com">kbroadie+kbcs@gmail.com</a></p>
     <div class="foot-end">
       <div class="theme-control" role="group" aria-label="Color theme">
         <button type="button" data-theme-choice="auto" aria-pressed="true">Auto</button>
@@ -212,6 +213,10 @@
       <li><a href="about.html"><span>About</span><small>Kevin Broadie and how we work</small></a></li>
       <li><a href="contact.html"><span>Contact</span><small>Start a project or book an audit</small></a></li>
     </ul>
+    <div class="sheet-actions">
+      <a class="btn btn-ghost" href="tel:+17604096303">Call 760-409-6303</a>
+      <a class="btn btn-ghost" href="mailto:kbroadie+kbcs@gmail.com">Email Kevin</a>
+    </div>
     <p class="sheet-label">Theme</p>
     <div class="theme-control" role="group" aria-label="Color theme">
         <button type="button" data-theme-choice="auto" aria-pressed="true">Auto</button>

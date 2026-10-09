@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Services — KBCS</title>
-<meta name="description" content="Audit, refine, direct, build, and automate, plus copyediting, staff training, public presentations, and a sounding board.">
+<meta name="description" content="Audit, refine, direct, build, and automate, plus custom apps, copyediting, staff training, public presentations, and a sounding board, for organizations across Southern California.">
 <meta name="theme-color" content="#f3f1ec" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0e0e12" media="(prefers-color-scheme: dark)">
 <meta property="og:title" content="Services — KBCS">
-<meta property="og:description" content="Audit, refine, direct, build, and automate, plus copyediting, staff training, public presentations, and a sounding board.">
+<meta property="og:description" content="Audit, refine, direct, build, and automate, plus custom apps, copyediting, staff training, public presentations, and a sounding board, for organizations across Southern California.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://kevinbroadie.com/services.html">
-<meta property="og:image" content="https://kevinbroadie.com/images/photos/wind-farm-1024.webp">
+<meta property="og:image" content="https://kevinbroadie.com/images/photos/wind-farm-wide.webp">
 <!-- The GitHub Pages copy points search engines at the real domain -->
 <link rel="canonical" href="https://kevinbroadie.com/services.html">
 <link rel="icon" type="image/png" href="images/logo.png">
@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('kbcs-theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t);}catch(e){}})();</script>
+<script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('kbcs-theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t);}catch(e){}addEventListener('pagereveal',function(e){try{var s=sessionStorage.getItem('kbcs-swipe');sessionStorage.removeItem('kbcs-swipe');if(s&&e.viewTransition)e.viewTransition.types.add('swipe-'+s);}catch(x){}});})();</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -92,16 +92,53 @@
           <div>
             <p class="step-kicker">Automate</p>
             <h3>We build the tool when none exists</h3>
-            <p>When a <mark>retail</mark> operation outgrows its spreadsheets, we turn the manual work into dashboards and automation that run quietly in the background.</p>
+            <p>When a <mark>retail</mark> operation outgrows its spreadsheets, we turn the manual work into dashboards, automation, and custom apps that run quietly in the background.</p>
           </div>
         </li>
       </ol>
     </div>
   </section>
 
+  <section class="apps" id="apps" aria-labelledby="apps-title">
+    <div class="wrap apps-grid">
+      <div class="sec-head">
+        <p class="eyebrow reveal">Custom apps</p>
+        <h2 id="apps-title" class="reveal">Tools built for one job</h2>
+        <p class="sec-lead reveal">When off-the-shelf software doesn’t fit, we design and build the app that does. For a transportation project prioritization study, that meant a custom pairwise survey: people compare two options at a time, and their answers add up to a ranked list.</p>
+        <ul class="checklist reveal">
+          <li>Surveys, voting, and decision tools</li>
+          <li>Dashboards and internal workflows</li>
+          <li>Accessible from the first screen, on any device</li>
+        </ul>
+      </div>
+      <div class="pw reveal" id="pw">
+        <div class="pw-head">
+          <p class="pw-label">Try a pairwise survey</p>
+          <p class="pw-progress" id="pw-progress">1 of 10</p>
+        </div>
+        <div class="pw-bar" aria-hidden="true"><span id="pw-bar"></span></div>
+        <div class="pw-ask" id="pw-ask">
+          <p class="pw-q" id="pw-q">Which should a downtown streets plan fund first?</p>
+          <div class="pw-choices">
+            <button type="button" class="pw-choice" data-side="0"></button>
+            <span class="pw-or" aria-hidden="true">or</span>
+            <button type="button" class="pw-choice" data-side="1"></button>
+          </div>
+        </div>
+        <div class="pw-result" id="pw-result" tabindex="-1" hidden>
+          <p class="pw-q">Your ranking</p>
+          <ol class="pw-rank" id="pw-rank"></ol>
+          <button type="button" class="btn btn-ghost btn-sm" id="pw-restart">Start over</button>
+        </div>
+        <p class="pw-note">A demo with made-up options, not data from the study.</p>
+        <p class="visually-hidden" id="pw-live" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+
   <div class="wrap">
     <figure class="photo-band reveal">
-      <img src="images/photos/laptop-1024.webp" srcset="images/photos/laptop-640.webp 640w, images/photos/laptop-1024.webp 1024w" sizes="(min-width: 1240px) 1240px, 100vw" alt="Hands typing on a laptop keyboard" width="1024" height="683" loading="lazy" decoding="async">
+      <picture><source media="(min-width: 640px)" srcset="images/photos/laptop-wide.webp" width="1024" height="439"><img src="images/photos/laptop-640.webp" alt="Hands typing on a laptop keyboard" width="640" height="427" loading="lazy" decoding="async"></picture>
       <figcaption>Design and technology, built to be used</figcaption>
     </figure>
   </div>
@@ -139,7 +176,7 @@
         <h2 id="cta-title" class="reveal">Bring us in, <em>quietly</em>.</h2>
       </div>
       <div class="cta-actions reveal">
-        <p>I take on a small number of engagements, most of which come through referrals, and reply within two business days.</p>
+        <p>I take on a small number of engagements across Southern California, most of them by referral, and reply within two business days.</p>
         <div class="cta-buttons">
           <a href="contact.html" class="btn">Start a project <span class="arrow" aria-hidden="true">→</span></a>
           <a href="contact.html?interest=An+audit" class="btn btn-ghost">Book an audit</a>
@@ -164,6 +201,7 @@
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
+    <p class="foot-contact"><a href="tel:+17604096303">760-409-6303</a><a href="mailto:kbroadie+kbcs@gmail.com">kbroadie+kbcs@gmail.com</a></p>
     <div class="foot-end">
       <div class="theme-control" role="group" aria-label="Color theme">
         <button type="button" data-theme-choice="auto" aria-pressed="true">Auto</button>
@@ -197,6 +235,10 @@
       <li><a href="about.html"><span>About</span><small>Kevin Broadie and how we work</small></a></li>
       <li><a href="contact.html"><span>Contact</span><small>Start a project or book an audit</small></a></li>
     </ul>
+    <div class="sheet-actions">
+      <a class="btn btn-ghost" href="tel:+17604096303">Call 760-409-6303</a>
+      <a class="btn btn-ghost" href="mailto:kbroadie+kbcs@gmail.com">Email Kevin</a>
+    </div>
     <p class="sheet-label">Theme</p>
     <div class="theme-control" role="group" aria-label="Color theme">
         <button type="button" data-theme-choice="auto" aria-pressed="true">Auto</button>

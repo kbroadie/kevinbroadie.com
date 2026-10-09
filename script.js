@@ -1,6 +1,5 @@
-// Where contact form messages go.
-// Placeholder on purpose: the real address is set only on the live web host.
-const CONTACT_EMAIL = 'hello@example.com';
+// Where contact form messages go
+const CONTACT_EMAIL = 'kbroadie+kbcs@gmail.com';
 // Optional: a form service endpoint (e.g. 'https://formspree.io/f/abcdwxyz').
 // When set, the form sends directly instead of opening the visitor's email app.
 const FORM_ENDPOINT = '';
@@ -377,6 +376,186 @@ form?.addEventListener('submit', async (e) => {
     button.disabled = false;
   }
 });
+
+// Services: pairwise survey demo. Each pair is asked once; wins decide the ranking.
+const pw = document.getElementById('pw');
+if (pw) {
+  const OPTIONS = ['Safer crossings', 'Shade trees', 'Protected bike lanes', 'More frequent buses', 'Smoother pavement'];
+  const ask = document.getElementById('pw-ask');
+  const result = document.getElementById('pw-result');
+  const progress = document.getElementById('pw-progress');
+  const bar = document.getElementById('pw-bar');
+  const rank = document.getElementById('pw-rank');
+  const live = document.getElementById('pw-live');
+  const choices = [...pw.querySelectorAll('.pw-choice')];
+  let pairs = [];
+  let step = 0;
+  let wins = [];
+  let beat = [];
+
+  const shuffle = (list) => {
+    for (let i = list.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [list[i], list[j]] = [list[j], list[i]];
+    }
+    return list;
+  };
+  const show = () => {
+    const [a, b] = pairs[step];
+    choices[0].textContent = OPTIONS[a];
+    choices[1].textContent = OPTIONS[b];
+    progress.textContent = `${step + 1} of ${pairs.length}`;
+    bar.style.width = `${(step / pairs.length) * 100}%`;
+  };
+  const finish = () => {
+    const order = OPTIONS.map((_, i) => i).sort((x, y) => wins[y] - wins[x] || (beat[x][y] ? -1 : 1));
+    rank.replaceChildren(...order.map((i) => {
+      const li = document.createElement('li');
+      const name = document.createElement('span');
+      const meter = document.createElement('span');
+      const fill = document.createElement('span');
+      name.className = 'pw-name';
+      name.textContent = OPTIONS[i];
+      meter.className = 'pw-meter';
+      meter.setAttribute('aria-hidden', 'true');
+      fill.style.width = `${(wins[i] / (OPTIONS.length - 1)) * 100}%`;
+      meter.append(fill);
+      const count = document.createElement('span');
+      count.className = 'pw-wins';
+      count.textContent = `${wins[i]} of ${OPTIONS.length - 1}`;
+      li.append(name, meter, count);
+      return li;
+    }));
+    progress.textContent = 'Done';
+    bar.style.width = '100%';
+    ask.hidden = true;
+    result.hidden = false;
+    result.focus();
+  };
+  const start = () => {
+    pairs = [];
+    OPTIONS.forEach((_, i) => OPTIONS.forEach((__, j) => { if (i < j) pairs.push(Math.random() < 0.5 ? [i, j] : [j, i]); }));
+    shuffle(pairs);
+    step = 0;
+    wins = OPTIONS.map(() => 0);
+    beat = OPTIONS.map(() => OPTIONS.map(() => false));
+    ask.hidden = false;
+    result.hidden = true;
+    show();
+  };
+  choices.forEach((button, side) => {
+    button.addEventListener('click', () => {
+      const winner = pairs[step][side];
+      const loser = pairs[step][1 - side];
+      wins[winner] += 1;
+      beat[winner][loser] = true;
+      step += 1;
+      if (step < pairs.length) {
+        show();
+        live.textContent = `Question ${step + 1} of ${pairs.length}: ${choices[0].textContent} or ${choices[1].textContent}?`;
+      } else {
+        finish();
+      }
+    });
+  });
+  document.getElementById('pw-restart').addEventListener('click', () => {
+    start();
+    choices[0].focus();
+  });
+  start();
+}
+
+// Phones: swipe sideways to move between sections, in tab bar order
+const SECTIONS = ['index.html', 'services.html', 'audit.html', 'work.html', 'accessibility.html', 'about.html', 'contact.html'];
+const SECTION_NAMES = ['Home', 'Services', 'Audit', 'Work', 'Accessibility', 'About', 'Contact'];
+const here = SECTIONS.indexOf(window.location.pathname.split('/').pop() || 'index.html');
+const coarse = window.matchMedia('(pointer: coarse)');
+if (here !== -1 && 'ontouchstart' in window) {
+  const NO_SWIPE = 'input, textarea, select, label, .carousel-track, .chips, .pw, .cc, dialog, [data-no-swipe]';
+  const EDGE = 24;
+  const main = document.getElementById('main');
+  const hint = document.createElement('div');
+  hint.className = 'swipe-hint';
+  hint.setAttribute('aria-hidden', 'true');
+  document.body.append(hint);
+  let start = null;
+  let locked = false;
+  let dx = 0;
+
+  const targetFor = (delta) => {
+    const index = here + (delta < 0 ? 1 : -1);
+    return index >= 0 && index < SECTIONS.length ? index : -1;
+  };
+  const reset = () => {
+    main.style.transform = '';
+    main.style.transition = 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)';
+    hint.classList.remove('show', 'ready');
+    start = null;
+    locked = false;
+    dx = 0;
+  };
+
+  document.addEventListener('touchstart', (e) => {
+    const t = e.touches[0];
+    if (e.touches.length !== 1 || !coarse.matches || t.clientX < EDGE || t.clientX > window.innerWidth - EDGE) return;
+    if (e.target.closest(NO_SWIPE) || document.querySelector('dialog[open]')) return;
+    start = { x: t.clientX, y: t.clientY, time: e.timeStamp };
+    main.style.transition = 'none';
+  }, { passive: true });
+
+  document.addEventListener('touchmove', (e) => {
+    if (!start) return;
+    const t = e.touches[0];
+    dx = t.clientX - start.x;
+    const dy = t.clientY - start.y;
+    if (!locked) {
+      if (Math.abs(dy) > 12 && Math.abs(dy) > Math.abs(dx)) { start = null; return; }
+      if (Math.abs(dx) < 16) return;
+      locked = true;
+    }
+    const target = targetFor(dx);
+    const pull = target === -1 ? dx * 0.08 : dx * 0.25;
+    main.style.transform = `translateX(${Math.max(-60, Math.min(60, pull))}px)`;
+    if (target !== -1) {
+      hint.textContent = dx < 0 ? `${SECTION_NAMES[target]} →` : `← ${SECTION_NAMES[target]}`;
+      hint.dataset.side = dx < 0 ? 'right' : 'left';
+      hint.classList.add('show');
+      hint.classList.toggle('ready', Math.abs(dx) > 90);
+    }
+  }, { passive: true });
+
+  document.addEventListener('touchend', (e) => {
+    if (!start || !locked) { if (start) reset(); start = null; return; }
+    const elapsed = e.timeStamp - start.time;
+    const fast = Math.abs(dx) > 50 && Math.abs(dx) / elapsed > 0.5;
+    const target = targetFor(dx);
+    if (target !== -1 && (Math.abs(dx) > 90 || fast)) {
+      try { sessionStorage.setItem('kbcs-swipe', dx < 0 ? 'next' : 'prev'); } catch { /* no transition direction */ }
+      window.location.href = SECTIONS[target];
+      hint.classList.add('ready');
+      return;
+    }
+    reset();
+  }, { passive: true });
+  document.addEventListener('touchcancel', reset, { passive: true });
+  // Coming back with the browser's back button restores the page as it was left
+  window.addEventListener('pageshow', reset);
+
+  // A one-time tip on phones
+  let tipped = false;
+  try { tipped = localStorage.getItem('kbcs-swipe-tip') === '1'; } catch { tipped = true; }
+  if (!tipped && coarse.matches) {
+    try { localStorage.setItem('kbcs-swipe-tip', '1'); } catch { /* ignore */ }
+    const tip = document.createElement('p');
+    tip.className = 'toast';
+    tip.setAttribute('role', 'status');
+    tip.textContent = 'Tip: swipe sideways to move between sections.';
+    document.body.append(tip);
+    setTimeout(() => tip.classList.add('show'), 1200);
+    setTimeout(() => tip.classList.remove('show'), 5200);
+    setTimeout(() => tip.remove(), 6000);
+  }
+}
 
 // Works offline and can be added to the home screen where supported
 if ('serviceWorker' in navigator && (window.location.protocol === 'https:' || ['localhost', '127.0.0.1'].includes(window.location.hostname))) {
